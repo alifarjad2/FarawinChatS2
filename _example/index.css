@@ -1,0 +1,160 @@
+@import url("https://v1.fontapi.ir/css/Estedad");
+
+body {
+  background: url(./stripes-light.webp);
+  box-sizing: border-box;
+  /* انداره فقط شامل محتوا است که تغییری در سایز اصلی اعمال نشود و به تمام تگ ها اعمال میشود */
+}
+
+* {
+  box-sizing: inherit;
+  font-family: Estedad, "Estedad", "Segoe UI", Tahoma, Geneva, Verdana,
+    sans-serif;
+  /* ارث بری کردن تمام محتوای صفحه از مقدار باکس سایزیگ */
+}
+
+.container {
+  display: flex;
+  /* برای راحتی استایل دادن به فرم از این ویژگی استفاده میکنیم که پدر فرم محسوب میشود */
+  justify-content: center;
+  /*  وسط چین کردن محتوای باکس در راستای افقی */
+  align-items: center;
+  /* وسط چین کردن محتوا در راستای عمودی */
+  width: auto;
+  /* تنظیم خودکار پهنا */
+  min-height: 100vh;
+  /*  حداقل ارتفاعی که باکس میگیرد */
+
+  padding-top: 8px;
+  /* //animation */
+
+  transition: 0.444s all;
+}
+
+.container.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.form {
+  width: 350px;
+  /*  تنظیم پهنا */
+  /* height: 450px; */
+  /*تنظیم ارتفاع */
+  border: 1.5px solid black;
+  /* اعمال کادر بوردر و تنظیم رنگ و سایز ان */
+  background-color: rgb(220, 235, 216);
+  /* رنگ پیش زمینه فرم */
+  display: flex;
+  justify-content: center;
+  /*  وسط چین کردن محتوای باکس در راستای افقی */
+  align-items: center;
+  /* وسط چین کردن محتوا در راستای عمودی */
+  border-radius: 20px;
+  /* تنظیم شعاع بوردر */
+  flex-direction: column;
+  /* تنظیم عناصر به صورت ستونی به همان ترتیب html */
+}
+
+label {
+  display: inline-block;
+  /* درون خطی کردن کد و اعمال پدینگ */
+  padding-bottom: 4px;
+  /* فاصله دادن بین عناصر از پایین */
+  font-size: 16px;
+  /* سایز فونت */
+  /* font-family: tahoma; */
+  /* نوع فونت */
+  font-weight: normal;
+  width: 260px;
+  /* ضخامت فونت */
+}
+
+input {
+  display: block;
+  /* برای نمایش خطی و تمام عرض تگ */
+  width: 260px;
+  height: 45px;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  /* فاصله دادن از پایین بین این عنصر و فضای اطراف */
+}
+
+button {
+  width: 260px;
+  height: 45px;
+  border-radius: 10px;
+  margin-top: 12px;
+  /* تنظیم شعاع بوردر */
+  /* فاصله دادن از پایین بین این عنصر و فضای اطراف */
+  font-size: 18px;
+  /* سایز فونت */
+  font-weight: normal;
+  /* ضخامت فونت */
+  background-color: rgb(116, 166, 62);
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: rgb(113 139 86);
+  color: #aaaaaa;
+  cursor: not-allowed;
+}
+
+a {
+  font-size: 20px;
+  text-decoration: none;
+  /* ازبین بردن خط زیر متن لینک */
+}
+
+#usererror {
+  color: red;
+}
+#passerror {
+  color: red;
+}
+#rePasserror {
+  color: red;
+  width: 200px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+form span {
+  font-size: 12px;
+  color: rgb(212, 70, 70);
+  padding: 0 32px 4px 32px;
+  white-space: pre-line;
+}
+
+.drawer {
+  position: fixed;
+  background: #f0f0f0;
+  /* height: 300px; */
+  width: 354px;
+  top: 0;
+  right: 0;
+  /* left: 0; */
+  bottom: 0;
+  display: none;
+}
+
+.loading {
+  display: none;
+  text-align: center;
+
+  position: fixed;
+  background: #3f3f3f88;
+  backdrop-filter: blur(4px);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+
+  cursor: wait;
+}
