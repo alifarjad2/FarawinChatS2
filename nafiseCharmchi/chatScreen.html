@@ -1,0 +1,95 @@
+<!-- #region start of ocde -->
+<!--  برای اینکه به مرورگر بگیم از html  استاندارد استفاده میکنیم  -->
+<!DOCTYPE html>
+<!-- شروع کد -->
+<html lang="fa" dir="rtl">
+  <!-- برای تنظیم مشخصات کلی که مرورگر بدونه  -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>chatScreen</title>
+    <!-- لینک کردن کد های css -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- #endregion start of ocde  -->
+  <!-- body of code -->
+  <body>
+    <!-- #region list of contacts -->
+    <!-- div  برای ایجاد قسمت لیست مخاطبین  -->
+    <div id="menu">
+      <!-- #region div of contact -->
+      <div class="contact"> 
+        <div class="avatar"> nc</div>
+        <div class="name_of_contact">
+          <p> nafiseCharmchi </p>
+      </div>
+      </div>
+      <div class="contact"> 
+        <div class="avatar"> nc</div>
+        <div class="name_of_contact">
+          <p> nafiseCharmchi </p>
+      </div>
+      </div>
+      <div class="contact"> 
+        <div class="avatar"> nc</div>
+        <div class="name_of_contact">
+          <p> nafiseCharmchi </p>
+      </div>
+      </div>
+      <div class="contact"> 
+        <div class="avatar"> nc</div>
+        <div class="name_of_contact">
+          <p> nafiseCharmchi </p>
+      </div>
+      </div>
+    </div>
+    <!-- # endregion list of contacts -->
+    <!-- .............................................. -->
+    <!-- #region chat screen -->
+    <!-- div  برای ایجاد قسمت چت -->
+    <div id="chat_screen">
+      <!-- #region header of chat -->
+      <!-- ایجاد قسمت هدر برای صفحه چت  -->
+      <!-- این قسمت شامل مشخصات کاربر و ادیت کاربر و رفرش صفحه هست -->
+      <div id="header_of_chat">
+        <div class="avatar"></div>
+        <div id="name_of_user">name_of_user</div>
+        <div id="edit_user"><img src="img/edit.jpg" alt="" width="30px" /></div>
+        <div id="refresh_chat">
+          <img src="img/refreshChat.png" alt="" width="25px" />
+        </div>
+      </div>
+      <!-- #endregion header of chat -->
+      <!-- #region first user -->
+      <!-- first user  کسی است که صفحه چت متعلق به اونه  -->
+      <!-- در واقع مشخصاتی که داخل هدر هست مربوط به first user هست -->
+      <div id="first_user">
+        <div class="chat">Lorem ipsum,</div>
+        <div class="chat">Lorem ipsofadipisicing elit.</div>
+        <div class="chat">ng elit.</div>
+      </div>
+      <!-- #endregion first user -->
+      <!-- #region secend user -->
+      <!-- secend user  در واقع شخصی است که صاحب اکانت هست  -->
+      <!-- کسی که کابر اول رو از لیست مخاطبین اش انتخاب کرده  -->
+      <div id="secend_user">
+        <div class="chat">ng elit. Magnoluptates asperiores hic, m?</div>
+        <div class="chat">ng elit.</div>
+      </div>
+      <!-- #endregion secend user -->
+      <!-- #region messege -->
+      <!-- div برای ایجاد قسمت پیام همراه با
+         اینپوت برای وارد کردن متن و img برای ارسال -->
+      <div id="place_of_messege">
+          <input id="input_of_messege" type="text" placeholder=" پیام .. " />
+        <div id="send_img">
+          <img src="img/send.webp" alt="" width="25px" />
+        </div>
+      </div>
+      <!-- #endregion messege -->
+    </div>
+    <!-- #endregion chat screen -->
+    <!-- link of js -->
+    <script src="chatScreen.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+/* استایل اولیه روی کل عناصر  */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* body */
+body {
+  /* استفاده از flex  برای منعطف بودن عناصر   */
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+}
+/* لیست مخاطبین  */
+/* درحال حاظر کامل نمیباشد !! */
+#menu {
+  background-color: rgb(224, 64, 64);
+  width: 25%;
+  height: 100%;
+  padding: 5px;
+  display: grid;
+  grid-auto-rows: max-content;
+  gap: 2px;
+}
+
+/* div of contact */
+.contact {
+  background-color: brown;
+  /* برای رسپانسیو بودن از flex استفاده کردم */
+  display: flex;
+  padding: 10px;
+  /* هم اندازه محتواش باشه */
+  height: fit-content;
+}
+/* اسم مخاطب توی لیست مخاطبین */
+.name_of_contact {
+  background-color: rgb(9, 209, 209);
+  /* فاصله های بیرونی عنصر با عنصر های دیگه */
+  margin: 12px 15px 0 0;
+  width: fit-content;
+  height: fit-content;
+}
+/* صفحه چت  */
+#chat_screen {
+  /* استفاده از گرید برای مشخص کردن جا ومقدار فضای هر عنصر فرزند */
+  background-color: greenyellow;
+  /* استفاده از گرید بخاطر رسپانسیو بودن و امکاناتی که بهمون میده */
+  display: grid;
+  /* تنظیم هر سطر عنصر */
+  grid-template-rows: 50px auto auto 8%;
+  /* فاصله بین هر سطر */
+  grid-row-gap: 50px;
+  /* تنظیم هر ستون عنصر */
+  grid-template-columns: 2fr;
+  /* اندازه های خود عنصر  */
+  width: 75%;
+  height: 100%;
+  padding: 0.5%;
+}
+/* هدر صفحه چت */
+#header_of_chat {
+     /* استایل های زیر مربوط به جای خود عنصر هس که توی عنصدر پدرش که دیسپلی گرید داره کجا باشه */
+  grid-area: 1/1/1/3;
+  /*  گرید بخاطر دسترسی هایی که توی مشخص کردن جا ومقدار فضای عناطر فرزند بهمون میده  */
+  display: grid;
+  /* استایل های هر ستون عنصر */
+  grid-template-columns: 60px 1fr auto auto;
+  height: fit-content;
+  /* اندازه های خود عنصر  */
+  padding: 5px;
+  margin: 0 5px 0 15px;
+  background-color: rgb(255, 247, 247);
+  /* استایل بوردر عنصر */
+  border-radius: 12px;
+}
+/* عکس پروفایل */
+/* کامل نمیباشد */
+.avatar {
+  background-color: rgb(228, 237, 237);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+}
+/* اسم کاربر */
+/* کامل نمیباشد */
+#name_of_user {
+  width: fit-content;
+  height: 30px;
+  margin: auto 0;
+  background-color: rgb(132, 241, 136);
+}
+/* استایل های مشابه بین ادیت کاربر و رفرش صفحه */
+#edit_user,
+#refresh_chat {
+  /* استایل های عنصر شامل اندازه ها وفاصله های بیرونی */
+  width: fit-content;
+  height: fit-content;
+  margin: 10px 10px;
+  /* background-color: blueviolet; */
+}
+/* کاربر اول */
+/* کامل نمیباشد !! */
+#first_user {
+  background-color: aqua;
+  width: fit-content;
+  grid-area: 2/1/2/2;
+  padding: 10px;
+  margin-right: 5px;
+  border-radius: 15px;
+}
+/* کاربر دوم */
+/* کامل نمیباشد !! */
+#secend_user {
+  background-color: aqua;
+  direction: ltr;
+  grid-area: 3/2/3/2;
+  width: fit-content;
+  padding: 10px;
+  margin-left: 20px;
+  border-radius: 15px;
+}
+/* استایل های مشابه  بین چت های کاربر اول و دوم */
+.chat {
+  width: fit-content;
+  background-color: beige;
+  padding: 8px;
+  margin-bottom: 5px;
+  /* حالت بوردر که درصورت مقدار مثبت گرفتن گرد میشه */
+  border-radius: 15px;
+}
+/* استایل های دیو ارسال پیام */
+#place_of_messege {
+  background-color: rgb(234, 245, 232);
+  /* مشخص کردن جای خود عنصر در عنصر پدرش چون پدرش دیسپلی گرید داره */
+  grid-area: 4/1/4/3;
+  /* استفاده از گرید برای رسپانسیو بودن  */
+  display: grid;
+  /* استایل های ستون ها وسطر ها */
+  grid-template-columns: 2fr;
+  grid-template-rows: 1fr;
+  /* مقدار درصد باعث میشه متناسب با پدرش تغییر اندازه بده */
+  width: 95%;
+  border-radius: 5px;
+}
+/* استایل های اینپوت دریافت کننده پیام */
+#input_of_messege {
+  padding-right: 5px;
+  /* مشخص کردن جای عنصر تو پدرش */
+  grid-area: 1/1/1/1;
+  /* inherit  ینی از پدرت ارث بری کن */
+  background-color: inherit;
+  border: 0;
+}
+/* استایل های ارسال کننده پیام */
+#send_img {
+  padding-top: 12px;
+  /* مشخص کردن جای عنصر */
+  grid-area: 1/2/1/2;
+  /* background-color: rgb(123, 66, 176); */
+}
