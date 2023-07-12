@@ -1,12 +1,133 @@
+<!-- #region doc -->
+<!-- برای تعیین کردن نوع فایلم به مرورگر -->
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<!-- #endregion -->
+<!-- #region html -->
+<!-- این تگ برای تعیین نوع سند هست و در آن از اتربیوت لنگ استفاده میکنیم برای تعیین زبان بیشتر سایت و از اتربیوت دایرکشن استفاده میکنیم برای چپ به راست یا راست به چپ سایت-->
+<!-- While HTML does not require authors to specify <html> element start and ending tags, it is important for authors to do so as it will allow them to specify the lang for the webpage.  -->
+<html lang="fa" dir="rtl">
+  <!-- #region head -->
+  <!-- az tag head baraye vizhegi hayii nazir seo va yek seri moshakhasat koli estefde miknim -->
+  <!-- be tor mesal tag meta aval type decode documentmono moshakhas mikne va
+          tag meta dovom miad andaze safhe ro ba meghyas va resolotion safhe set mikne
+          va tag title ham baraye moshkhas kardn title sfahatemon hast -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+    <link rel="stylesheet" href="../../Styles/Chat/Chat.css" />
+  </head>
+  <!-- #endregion -->
+  <!-- #region body -->
+  <!-- khob tag body badane safhe hamon hast va har chizi ki bkhhim dakhel safhehamon bashe dar inja code miznim -->
+  <body>
+    <!-- #region Layout Page -->
+    <!-- #region sideBar -->
+    <!-- kol sidebar ro be 2 ghesmat taghsim kard yeki samt rasst k fght sidebaricon hst
+       va samt chap k shamel ma baghi etelaat hast -->
+    <div class="contacts-container">
+      <!-- #region Only sidebar Icon -->
+      <div class="sidebar-icon">
+        <!-- #region Sidebar Icon -->
+        <?xml version="1.0" ?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
+        <svg
+          class="rotate"
+          height="32px"
+          id="Layer_1"
+          style="enable-background: new 0 0 32 32"
+          version="1.1"
+          viewBox="0 0 32 32"
+          width="32px"
+          xml:space="preserve"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+        >
+          <path
+            class="sidebar"
+            d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2 s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2 S29.104,22,28,22z"
+          />
+        </svg>
+        <!-- #endregion -->
+      </div>
+      <!-- #endregion -->
+      <!-- #region another Parts -->
+      <!-- baz in ghesmat ro be 2 bakhsh bala yani title
+        va payin yani list contactha taghsim kardm -->
+      <div class="contacts">
+        <!-- #region Title and addContactIcon & refreshIcon -->
+        <div class="titlebar">
+          <p>پیام‌رسان فراوین</p>
+          <!-- #region addContact Icon -->
+          <svg
+            id="addContact-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-plus"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+            />
+          </svg>
+          <!-- #endregion -->
+          <!-- #region SVG Refresh Icon -->
+          <svg
+            class="refresh-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="25"
+            height="30"
+            viewBox="0 0 512 512"
+          >
+            <path
+              class="refresh-line"
+              d="M320,146s24.36-12-64-12A160,160,0,1,0,416,294"
+              style="
+                fill: none;
+                stroke: #000;
+                stroke-linecap: square;
+                stroke-miterlimit: 10;
+                stroke-width: 32px;
+              "
+            />
+            <polyline
+              class="refresh-arrow"
+              points="256 58 336 138 256 218"
+              style="
+                fill: none;
+                stroke: #000;
+                stroke-linecap: square;
+                stroke-miterlimit: 10;
+                stroke-width: 32px;
+              "
+            />
+          </svg>
+          <!-- #endregion -->
+        </div>
+        <!-- #endregion -->
+        <!-- #region ContactList -->
+        <div class="contacts-list">
+          
+        </div>
+        <!-- #endregion -->
+      </div>
+      <!-- #endregion -->
+    </div>
+    <!-- #endregion -->
+    <!-- #region ChatLayout -->
+    <div class="flex-container">
+      <div class="chating-contact-name">نام مخاطب در حال چت</div>
+      <div class="chat-page">صفحه چت</div>
+      <div class="type-container">قسمت تایپ</div>
+    </div>
+    <!-- #endregion -->
+    <!-- #endregion -->
+    <!-- #region Scripts -->
+    <script src="../../Scripts/Chat/Chat.js"></script>
+    <script src="../../Scripts/API/farawin.js"></script>
+    <!-- #endregion -->
+  </body>
+  <!-- #endregion -->
 </html>
+<!-- #endregion -->
