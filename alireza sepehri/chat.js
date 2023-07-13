@@ -67,8 +67,6 @@ const sync = () => {
   });
 };
 
-sync()
-
 let _count = 0;
 const applyFrameRender = () =>
   requestAnimationFrame(() => {
