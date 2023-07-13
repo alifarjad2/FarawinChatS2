@@ -163,20 +163,6 @@ const farawin = {
   },
 
   /**
-   *  تابعی برای تست دریافت یوزرها
-   * @param {responseHandlerCallback} responseHandlerCallback - یک تابع بفرستید تا جواب گرفته شده رو بررسی کنید و پیغام نمایش بدید
-   *
-   * @example
-   *  farawin.getUsers(res=> console.log(res))
-   *
-   */
-  getUsers: async (responseHandlerCallback) => {
-    const result = await farawin.fetch("GET", "user");
-    responseHandlerCallback && responseHandlerCallback(result);
-    !responseHandlerCallback && alert(result?.message);
-  },
-
-  /**
    *  تابعی برای تست رجیستر یا ثبت‌نام
    * کافیه یوزر و پسورد گرفته شده از کاربر رو به این تابع ارسال کنید
    * خودش براتون می فرسته به سرور و جواب رو بر می گردونه
