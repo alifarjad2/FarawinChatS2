@@ -148,7 +148,7 @@ setTimeout(() => {
           syncActions();
           buttonLoading();
           // changeMode.click();
-          location.assign("/");
+          location.assign("../messanger page/messenger.html");
           localStorage.userName = uservalue;
 
           alert(response.message);

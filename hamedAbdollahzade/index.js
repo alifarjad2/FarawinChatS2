@@ -1,4 +1,5 @@
-if (!localStorage.token) location.assign("/auth");
+// اینجا بررسی میکنیم اگه توکن وجود نداشت هدایت میشه به صفحه ثبت نام و ورود در پوشه مربوطه 
+if (!localStorage.token) location.assign("./auth/index.html");
 
 const button = document.querySelector("button");
 
