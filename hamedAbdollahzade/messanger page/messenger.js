@@ -37,11 +37,11 @@ const render = () => {
 
 const sync = () => {
   farawin.getContacts((result) => {
-    console.table(result.contactList);
+    // console.table(result.contactList);
 
     window.list = result.contactList;
+    render();
   });
-  render();
 };
 
 sync();
