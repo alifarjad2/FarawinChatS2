@@ -1,0 +1,383 @@
+@font-face {font-family: "IRANSansWeb(FaNum)";
+    src: url("fonts/IRANSansWeb(FaNum).woff2") format("woff2"), /* chrome、firefox */
+    url("fonts/ansWeb(FaNum).woff") format("woff"), /* chrome、firefox */
+    url("fonts/ansWeb(FaNum).ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  }
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input,
+button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input[type=submit],
+button {
+    cursor: pointer;
+}
+
+body {
+    font-family: 'IRANSansWeb(FaNum)', sans-serif;
+    font-weight: 400;
+    margin: 0;
+    height: 100vh;
+}
+
+.container {
+    width: 65%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.flex_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.background {
+    border-right: 1px solid #eee;
+    border-left: 1px solid #eee;
+    background-color: #e0efec33;
+    background: url("image/bg.avif") no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.content_box {
+    padding-top: 15vh;
+}
+
+.title_content {
+    width: 35em;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 auto 30px;
+    padding-right: 25px;
+}
+
+.disnone {
+    display: none;
+}
+/*
+**
+ login & register pages styles 
+ */
+.box_form {
+    width: 30%;
+    min-width: 280px;
+    max-width: 400px;
+    margin: 0 auto;
+    border: 1px solid #8a8a8a;
+    border-radius: 18px;
+    background-color: rgb(217, 234, 211);
+    padding: 30px 40px 10px;
+    font-size: 1.125rem;
+    position: relative;
+}
+
+.row_input {
+    margin-bottom: 12px;
+    position: relative;
+}
+
+.row_input label {
+    margin-right: 12px;
+    margin-bottom: 2px;
+}
+
+.row_input input,
+.row_input button {
+    width: 100%;
+    padding: 4px 12px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    font-size: inherit;
+    margin-top: 2px;
+}
+
+.row_input input.success {
+    border-color: #39c039;
+    box-shadow: 0 0 3px inset #39c039;
+}
+
+.row_input input.error {
+    border-color: red;
+    box-shadow: 0 0 2px inset red;
+}
+
+.row_input.cnter {
+    text-align: center;
+}
+
+input.in_btn,
+button.in_btn {
+    margin-top: 20px;
+}
+
+.in_btn {
+    color: #9cca89;
+    background-color: rgb(106, 168, 79);
+    transition: 200ms;
+}
+
+.in_btn.enabled {
+    color: #fff;
+}
+
+.in_btn.enabled:hover {
+    background-color: green;
+}
+
+p.msg {
+    position: absolute;
+    font-size: 10px;
+    color: red;
+    bottom: -17px;
+    right: 10px;
+    margin: 0;
+}
+
+.row_input a {
+    color: royalblue;
+}
+
+/*
+**
+ panel page style 
+ */
+.pg_massenger {
+    display: flex;
+    padding: 80px 55px;
+    font-size: 18px;
+    height: 98vh;
+}
+
+.pg_box {
+    border: 1px solid #000;
+    background-color: rgb(217, 234, 211);
+    border-radius: 14px;
+}
+
+.padding_box {
+    padding: 5px 12px;
+}
+
+/* ********************* */
+.pg_box.pg_msg_side {
+    margin-left: 12px;
+}
+
+.pg_msg_side {
+    min-width: 295px;
+    overflow: hidden;
+    min-height: 132px;
+    height: 100%;
+}
+
+.header_side {
+    display: flex;
+    justify-content: space-between;
+    margin: 12px 0;
+}
+
+.title_side {
+    margin: 0 5px;
+    font: inherit;   
+}
+
+.fx_icon_header {
+    align-self: center;
+}
+
+.icontop {
+    margin-right: 8px;
+    vertical-align: middle;
+    cursor: pointer;
+    display: inline-block;
+    width: 30px;
+    background: url(image/plusRefresh.png) -3px;
+    height: 30px;
+}
+
+#plusIcon {
+    background: url(image/plusRefresh.png) 30px;
+}
+
+#editIcon {
+    background: url(image/pencil.png);
+}
+
+.user_icon {
+    width: 50px;
+    height: 48px;   
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.list_contact {
+    margin: 10px 0;
+    padding: 0;
+    border-radius: inherit;
+    height: 80%;
+    overflow-y: auto;
+}
+
+.item_contact {
+    cursor: pointer;
+    margin-top: 4px;
+}
+
+.item_contact:hover {
+    background-color: #b6d7a863;
+}
+
+.item_contact.item_active {
+    background-color: #b6d7a8;
+}
+
+/* ************** */
+.pg_msg_content {
+    height: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.header_contact {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ******************** */
+.show_msg {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-top: 90px;
+    padding-bottom: 15px;
+}
+
+.msg_box {
+    display: flex;
+    width: 100%;
+    margin-top: 15px;
+    min-height: 4em;
+}
+
+.msg_box > div {
+    width: 45%;
+    border-radius: 14px;
+    border: 1px solid #000;
+}
+
+.msg_box.send {
+    justify-content: flex-start;
+}
+
+.msg_box .send {
+    background-color: #cfe2f3;
+}
+
+.msg_box.receive {
+    justify-content: flex-end;
+}
+
+.msg_box .receive {
+    background-color: #f3f3f3;
+}
+
+.msg_box p {
+    margin: 0;
+    width: 100%;
+}
+
+.msg_box .time {
+    font-size: 0.6em;
+    position: relative;
+    top: 6px;
+}
+
+.msg_box .receive .time {
+    float: left;
+    top: 1px;
+}
+
+/* ****************** */
+.msg_content {
+    position: relative;
+}
+
+.msg_content input {
+    background: transparent;
+    border: none;
+    margin: 7px 0;
+    width: 90%;
+}
+
+.msg_content input::placeholder {
+    color: inherit;
+}
+
+.msg_content img {
+    width: 30px;
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    cursor: pointer;
+}
+/* ********************* */
+
+/* 
+**
+add user page style
+ */
+ #backPopup {
+     background-color: #121212f0;
+     position: fixed;
+     inset: 0;
+     /* top: 0;
+     right: 0;
+     left: 0;
+     bottom: 0; */
+     display: none;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .box_form.popupBox {
+    width: 20%;
+    padding: 40px;
+    box-shadow: 0 0 4px #808080;
+}
+
+.box_form.popupBox {
+    width: 20%;
+    padding: 40px;
+}
+
+ .popupBox {
+    transform: scale(1);
+    transition: all 2s;
+ }
+ 
+ i.close {
+     position: absolute;
+     left: 15px;
+     top: 15px;
+     font-size: 1.2em;
+     font-style: normal;
+     cursor: pointer;
+ }
+
+i.close:hover {
+    color: rgb(232, 63, 63);
+}
