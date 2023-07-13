@@ -17,14 +17,28 @@ body {
 }
 
 .headerContact{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    overflow: hidden;
     /* یک رنگ پس زمینه برای شروع کار درست کردم ک هر المنت مشخص باشه کدوم جایگاه رو داره  */
     background-color: rgba(146, 216, 152,0.4);
+    border: 1px solid black;
     border-radius: 20px;
+    height: 50px;
     /* اینجا گفتم از ستون 2 تا ستون 3 و از سطر یک تا سطر 2 رو بگیره  */
     grid-column: 2/3;
     grid-row: 1/2;
     
 }
+.headerContact p {
+position: absolute;
+right: 20px;
+  }
 
 .contactContainer{
     display: flex;
@@ -72,7 +86,7 @@ body {
     grid-row: 2/3;
     height: 400px;
     margin: 10px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 
@@ -117,8 +131,6 @@ body {
     border-radius: 20px;
     font-size: larger;
     padding-right: 20px;
-    
-   
 }
 
 #btnSend {

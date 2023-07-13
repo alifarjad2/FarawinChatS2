@@ -72,8 +72,8 @@ sync();
 
 }
 
-function selectedContact() {
-    //! todooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+function selectedContact(event) {
+    headerContactValue.innerHTML = event.target.innerHTML
 }
 
 

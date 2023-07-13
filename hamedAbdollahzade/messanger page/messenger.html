@@ -11,12 +11,14 @@
     <div id="container" class="container">
         <!-- از بلاک دیو استفاده کردم برای جداسازی المنت ها و بعدا داخلش بتونم محتوام رو بذارم  و به هرکدوم کلاس مربوط ب خودش رو دادم  -->
         
-        <div class="headerContact customItem" >headerContact</div>
+        <div class="headerContact " >
+            <p id="headerContactValue">مخاطب</p> <img src="./img/Edit.PNG" alt="edit" width="40px" height="40px"> <img src="./img/refresh.PNG" alt="refresh" width="40px" height="40px">
+        </div>
         
         <div class="contactContainer ">
 
             <div class="headerContactContainer"> پیام رسان فراوین  <img src="./img/plus.PNG" alt="pluse" onclick="addcontact()"> <img src="./img/refresh.PNG" alt="refresh" onclick="refreshContact()"></div>
-            <div  id="contact-container" onclick="selectedContact()">
+            <div  id="contact-container" onclick="selectedContact(event)">
 
             <p>لیست مخاطبین وجود ندارد</p>
             
