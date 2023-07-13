@@ -1,0 +1,213 @@
+/* ستاره یک سلکتوری برای اتخاب تمام کد های داخل بادی است */
+/* از ستاره استفاده کردم تا پدینگو مارجین تمامی المنت هارا ریست و ادغام باکس سایزینگ در ستاره و بادی باکس مدل کد هارا درست کنم تا منظم باشند */
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+/* در اینجا با انتخاب سکشنم در اچ تی ام ال به چیدمان اجزای داخل آن پرداختم */
+.page {
+  display: flex;
+  justify-content: center;
+}
+/* در اینجا دکمه باز کننده منو را جا گذاری کرده ام */
+.menu-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  padding: 10px;
+  cursor: pointer;
+}
+/* این یک هاور برای دکمه منو است که دارای رنگ بک گراند و گرد شدن حاشیه ها هست */
+.menu-icon:hover {
+  background-color: aqua;
+  border-radius: 10px;
+}
+
+/* در اینجا دکمه بستن منو را جاگذاری کرده ام و در ادامه هاوری با داشتن بک  گراند و گرد کردن حاشیه ها داده ام */
+.close__icon {
+  position: absolute;
+  top: 0;
+  right: 130px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+
+.close__icon:hover {
+  background-color: aqua;
+  border-radius: 10px;
+}
+
+/* در اینجا منوی مخاطبین را استایل دهی کردم که دارای استایل های مختلفیست از جمله اینکه اگر محتوایش بیشتر از ارتفاع صقحه بود اسکرول دار شود */
+.right-menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  background-color: aquamarine;
+  padding: 50px 30px;
+  display: none;
+  flex-direction: column;
+  overflow: scroll;
+  transition: 1s;
+}
+
+/* در این قسمت مستقیما لیست هایی ک جی اس میسازد را استایل دهی کردم تا مرتب شوند */
+.right-menu ul li {
+  list-style: none;
+  font-size: larger;
+  padding: 10px;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+/* بعلاوه هاوری که آنهارا دارای بک گراند و رادیوس میکند */
+.right-menu ul li:hover {
+  background-color: aqua;
+  border-radius: 10px;
+}
+/* در این قسمت اجزای داخل صفحه چت را چیدمان مرتبی داده ام */
+.chat {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 10px;
+}
+/* در این قسمت بک گراند یوزر اینفو و در کل هدر چت را ساخته ام */
+.chat__header {
+  height: fit-content;
+  background-color: aquamarine;
+  width: 100%;
+  padding: 10px 40px;
+  border-radius: 10px;
+  /* display: flex;
+    align-items: center; */
+}
+/* این قسمت مربوط به بخش اواتار و اسم مخاطب در هدر چت است که به چیدمانش پرداختم */
+#contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+/* در این قسمت استایل دهی اواتار مخاطب را انجام داده ام
+نظیر وسط چین کردن متن داخلش بورد رادیوس برای گرد کردن هاشیه و بک گراند  */
+.avatar {
+  background-color: rgba(0, 0, 255, 0.425);
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  text-align: center;
+  align-items: center;
+  padding: 20px;
+  font-size: larger;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* در این قسمت اسم مخاطب را با آواتار آن فاصله دادم */
+.contact__name {
+  padding-right: 30px;
+}
+/* این قسمت برای سکشن پیام های چت است که به آن ارتفاعی دادم تا چیام ها در آن میان نمایش داده شوند */
+.chat__body {
+  min-height: 500px;
+  padding: 10px;
+}
+/* دو بلاک پایین برای استایل دهی به پیام های فرضی ردو بدل شده استکه وسط چین کردن متنو بک گراندو غیره را برایش تعریف کرده ام */
+#sender {
+  width: 50%;
+  text-align: justify;
+  background-color: rgba(127, 255, 212, 0.529);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#reciver {
+  width: 50%;
+  text-align: justify;
+  padding: 10px;
+  background-color: rgba(127, 255, 212, 0.529);
+  border-radius: 10px;
+  position: absolute;
+  left: 20px;
+  margin-top: 30px;
+}
+/* این قسمت برای چیدمان دکمه و فیلد نوشتنو فرستادن پیام است */
+.chat__input {
+  padding: 10px;
+  display: grid;
+}
+/* در این قسمت فیلد ورودی متن کاربر را استابل دهی کرده ام و از گیرید استفاده کرده ام تا این دو المنت را یعنی فیلد و دکمه اش را با گیرید روی هم بندازم تا ریسپانسیو باشد */
+.chat__input input {
+  padding: 15px;
+  width: 100%;
+  border-radius: 10px;
+  border: 3px solid aquamarine;
+  outline: none;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  justify-content: center;
+  align-content: center;
+}
+/* در دو بلاک پایین دکمه لود مخاطبان را استایل دهی کردم و با دادن هاور به آن زیبایی دادم تا یو آی بهتری داشته باشد */
+#buttonLoading {
+  height: 50px;
+  width: 100px;
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  cursor: pointer;
+  background-color: aqua;
+  border: none;
+  border-radius: 10px;
+  transition: 0.2s ease-in;
+}
+
+#buttonLoading:hover {
+  transform: translateY(-7px);
+  box-shadow: 1px 5px 15px 5px rgba(255, 255, 255, 0.734);
+}
+
+.send__button {
+  width: 50px;
+  height: 40px;
+  background-color: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: center;
+  justify-self: end;
+  margin-left: 5px;
+}
+
+.add__contact{
+  position: absolute;
+  top: 0;
+  right: 60px;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  display: none;
+}
+.add__contact:hover{
+  background-color: aqua;
+  border-radius: 10px;
+}
+
+/* در این قسمت با استاده از مدیا کوئری تغییری در استایل اندازه صفحه چت دادم تا ریسپانسیو باشد در گوشی های خیلی کوچک */
+@media (min-width: 320px) {
+  .chat__body {
+    min-height: 550px;
+    padding: 10px;
+  }
+}
