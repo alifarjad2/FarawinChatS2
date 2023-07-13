@@ -13,7 +13,7 @@ const contactlist = [
     {mobile: '09353649470',username: 'رضا'}   
 ]
 
-const telFormat = /^[0,9]{2}\d{9}/
+const telFormat1 = /^[0,9]{2}\d{9}/
 
 // ثابت های نگهدارنده عناصر مورد استفاده
 const plusIcon = document.getElementById('plusIcon')    
@@ -22,16 +22,16 @@ const closeIcon = document.getElementById('closeIcon')
 const popupBox = document.getElementById('backPopup')
 const popUpClass = document.querySelector('.popupBox')
 const btnPopup = document.getElementById('btnPopup')
-const mobileInput = document.getElementById('mobileUser')
-const nameInput = document.getElementById('nameUser')
+const mobileInput1 = document.getElementById('mobileUser')
+const nameInput1 = document.getElementById('nameUser')
 
 // مقداری که میگیرد عملکرد (افزودن/ویرایش) دکمه را تعیین می کند
-let btnType
+let btnType1
 
 // کلیک روی آیکن پلاس
 plusIcon.onclick = () => {
     popupBox.style.display = 'flex'        /* default popupBox -> display none */
-    btnType = 'btnPlus'
+    btnType1 = 'btnPlus'
     btnPopup.textContent = 'افزودن مخاطب'
     btnPopup.nextElementSibling.textContent = ''
 }
@@ -39,7 +39,7 @@ plusIcon.onclick = () => {
 // کلیک روی آیکن ادیت
 editIcon.onclick = () => {
     popupBox.style.display = 'flex'      /* default edituserBox -> display none */
-    btnType = 'btnEdit'
+    btnType1 = 'btnEdit'
     btnPopup.textContent = 'اعمال تغییرات'
     btnPopup.nextElementSibling.textContent = ''
 }
@@ -52,9 +52,9 @@ closeIcon.onclick = () => {
 // کلیک روی دکمه افزودن/ویرایش مخاطب
 btnPopup.addEventListener('click', () => {
     
-    let mobileValue = mobileInput.value
-    let mobileCheck = mobileValue.match(telFormat)
-    let namevalue = nameInput.value
+    let mobileValue = mobileInput1.value
+    let mobileCheck = mobileValue.match(telFormat1)
+    let namevalue = nameInput1.value
     let findContact = null
 
     // اگر شماره موبایل معتبر باشد
@@ -68,8 +68,8 @@ btnPopup.addEventListener('click', () => {
         }
         // وقتی مخاطب در سامانه ثبت نام کرده باشد امکان ذخیره وجود خواهد داشت
         if(findContact) {
-            mobileInput.classList.remove('error')
-            nameInput.classList.remove('error') 
+            mobileInput1.classList.remove('error')
+            nameInput1.classList.remove('error') 
             btnPopup.nextElementSibling.textContent = ''
             // بررسی می کند یک نام برای مخاطب وارد شده باشد
             if(namevalue) {
@@ -78,7 +78,7 @@ btnPopup.addEventListener('click', () => {
                 // جستجوی مخاطب در لیست مخاطبین کاربر
                 for (const contact of contactlist) {
                     if(mobileValue.match(contact.mobile)) {
-                        if(btnType === 'btnPlus') {
+                        if(btnType1 === 'btnPlus') {
                             btnPopup.nextElementSibling.textContent = 'این مخاطب قبلا ذخیره شده است!'
                             findContact = null
                             break
@@ -101,11 +101,11 @@ btnPopup.addEventListener('click', () => {
                     console.log(contactlist) // نمایش خروجی افزودن مخاطب جدید در کنسول
                 }
             } else {
-                nameInput.classList.add('error')
+                nameInput1.classList.add('error')
                 btnPopup.nextElementSibling.textContent = 'یک نام دلخواه برای مخاطب وارد نمایید...'
             }
         } else {
-            mobileInput.classList.add('error')
+            mobileInput1.classList.add('error')
             btnPopup.nextElementSibling.textContent = 'مخاطب ابتدا باید در سامانه ثبت نام نماید!'
         }
     } else {

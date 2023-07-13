@@ -105,12 +105,13 @@ html5 سند استاندارد -->
                         header_contact : تعیین استایل عنوان بخش محتوای پیامهای پنجره پیام رسان
                     ---------------------------------------------------------------- -->
                     <!-- دربردارنده عنوان سکشن دوم که نام مخاطب انتخاب شده است -->
-                    <header class="pg_box header_contact padding_box">
+                    <header id="pg_head_contact" class="pg_box header_contact padding_box">
 
                         <!-- دربردارنده نام و آیکن مخاطب -->
                         <div>
-                            <img class="user_icon" src="image/user_icon2.png" alt="user_icon">
-                            <span class="name_contact">احمد کریمی</span>
+                            <div class="user_icon"></div>
+                            <!-- <img class="user_icon" src="image/user_icon2.png" alt="user_icon"> -->
+                            <span class="name_contact"></span>
                         </div>
 
                         <!-- یک دیو دربردارنده آیکن ها -->        
@@ -125,7 +126,7 @@ html5 سند استاندارد -->
                     </header>
 
                     <!-- باکس های پیام در این دیو قرار دادم -->
-                    <div class="show_msg">
+                    <div id="show_msg" class="show_msg">
         
                         <!-- باکس نگهدارنده هر پیام
                         باکس پیام ارسال شده را کلاس "سند" دادم تا سمت راست قرار بگیرد -->
@@ -197,9 +198,8 @@ html5 سند استاندارد -->
         action آدرس مقصد اطلاعات ارسالی
         post روش ارسال اطلاعات  -->
         <form action="" method="post">
-
-            <!-- 
-            یک تگ عمومی "دیو" با کلاس "رو_اینپوت" تعریف کردم تا محتوای هر بخشی که در یک ردیف 
+  
+            <!-- یک تگ عمومی "دیو" با کلاس "رو_اینپوت" تعریف کردم تا محتوای هر بخشی که در یک ردیف 
             و با یک هدف کنار هم قرار میگیرند را تفکیک و استایل خاصی از جمله فاصله عمودی
             از ردیف های قبل و بعد برای آن تعیین کردم
             -->
@@ -252,175 +252,14 @@ html5 سند استاندارد -->
    </div>
 
 
-   <script src="farawin.js"></script>
 
-     <!-- دستورات جاوااسکریپت را درون این تگ قرار می دهیم
+
+
+   <!-- دستورات جاوااسکریپت را با استفاده از این تگ به سند الحاق می کنیم
     برای اینکه قبل از هر اتفاقی در ابتدا تمام محتوای سند بارگزاری شود
     و سپس دستورات جاوااسکریپت اجرا شوند این تگ در انتهای "بادی" قرار دادم -->
+    <script src="farawin.js"></script>
     <script src="chat.js"></script>
-    <script src="addEdit.js"></script>
-
-
-    <!-- دستورات جاوااسکریپت را درون این تگ قرار می دهیم
-    برای اینکه قبل از هر اتفاقی در ابتدا تمام محتوای سند بارگزاری شود
-    و سپس دستورات جاوااسکریپت اجرا شوند این تگ در انتهای "بادی" قرار دادم -->
-    <script>
-
-    // example - آرایه ای از مخاطبین که در سامانه ثبت نام کرده اند
-    // const registeredList = [
-    //     {mobile: '09155803862',namefamily: 'علیرضا سپهری', username: ''},
-    //     {mobile: '09391570415',namefamily: 'علیرضا سپهری', username: ''},
-    //     {mobile: '09123205004',namefamily: 'علیرضا سپهری', username: ''},
-    //     {mobile: '09353649470',namefamily: 'علیرضا سپهری', username: ''}    
-    // ]
-
-    // // example - آرایه لیست مخاطبین ذخیره شده
-    // const contactList = [
-    //     {mobile: '09155803862',namefamily: 'علیرضا سپهری', username: 'علی'},
-    //     {mobile: '09353649470',namefamily: 'علیرضا سپهری', username: 'رضا'}   
-    // ]
-
-    // ثابت های نگهدارنده عناصر مورد استفاده
-    const selectOption = document.getElementById('select_action')
-    const mobileInput = document.getElementById('mobile_input')
-    const nameInput = document.getElementById('username_input')
-    const exeBtn = document.getElementById('exe_btn')
-
-    // مقداری که میگیرد عملکرد (افزودن/ویرایش) دکمه را تعیین می کند
-    let btnType = 'addContent'
-    
-    /* با تغییر آپشن نوع عملیات (افزودن/ویرایش مخاطب) تعیین می شود
-    onchange خصیصه ای برای رویداد تغییر وضعیت */
-    selectOption.onchange = () => {
-        if(selectOption.value == 'edit_content') {
-            btnType = 'editContent'
-        } else {
-            btnType = 'addContent'
-        }
-    }
-    
-    // فرمت شماره موبایل
-    const telFormat = /^[0,9]{2}\d{9}/
-    
-    // کلیک روی دکمه افزودن/ویرایش مخاطب
-    exeBtn.addEventListener('click', () => {
-        
-        /*شماره موبایل مطابق فرمت تعریف شده باشد انرا برمی گرداند
-        وگرنه مقدار "نال" را در آن میریزد */
-        let mobileInputvalue = mobileInput.value.match(telFormat)
-        
-        /* نام کاربری وارد شده را ذخیره با بررسی حداقل 3 کاراکتر
-        در غیر اینصورت "نال" می شود تا در زمان بررسی خالی بودن یا نبودن
-         مورد استفاده قرار گیرد */
-        let userInputvalue = nameInput.value.match(/.{3,}/)
-        
-        /* متغیری برای بررسی و تشخیص اینکه اطلاعات مخاطب درون آرایه های
-        محتوی لیست مخاطبین سامانه و همینطور لیست مخاطبین کاربر وجود دارد یا خیر */
-        let findContact = null
-        
-        /* اگر شماره موبایل معتبر باشد دستورات ذیل اجرا می شود
-        در غیر اینصورت مقدار "نال" برمی گرداند و پیغام متناظر را نشان میدهد */
-        if(mobileInputvalue) {
-            
-            // حلقه جستجوی مخاطب در سامانه/ جستجو در آرایه فرضی لیست مخاطبین سامانه
-            for (const contact of registeredList) {
-
-                // اگر مخاطب پیدا شد یعنی در سامانه ثبت نام کرده است
-                if(mobileInputvalue == contact.mobile) {
-
-                    // آبجکت اطلاعات مخاطب درون متغیر ذخیره میشود
-                    findContact = contact
-                    
-                    /*  حلقه را ادامه نمیدهد و سریعا از حلقه خارج می شود
-                    و دستورات بعد از حلقه را اجرا می کند */
-                    break
-                }    
-            } // انتهای دستورات حلقه سامانه ثبت نام کرده ها 
-            
-            /* وقتی مخاطب در سامانه ثبت نام کرده باشد امکان ذخیره وجود خواهد داشت
-            در غیر اینصورت مقدار "نال" برمی گرداند و پیغام متناظر را نشان میدهد */
-            if(findContact) {
-                
-                /* اگر در بار اول با خطا مواجه شده و استایل کلاس خطا گرفته باشد 
-                آن کلاس را پاک میکنیم و همچنین پیغام های خطا نیز پاک می شود */
-                mobileInput.classList.remove('error')
-                nameInput.classList.remove('error')
-                selectOption.classList.remove('error')
-                exeBtn.nextElementSibling.textContent = ''
- 
-                /* بررسی می کند نام کاربری برای مخاطب وارد شده باشد و حداقل سه کاراکتر باشد 
-                در غیر اینصورت مقدار "نال" برمی گرداند و پیغام متناظر را نشان میدهد */
-                if(userInputvalue) {
-                    let index = 0  // یک شمارنده برای یافتن ایندکس مخاطب 
-                    
-                    // حلقه جستجوی مخاطب در آرایه فرضی لیست مخاطبین کاربر
-                    for (const contact of contactList) {
-
-                        // اگر مخاطب پیدا شد یعنی قبلا به لیست مخاطبین افزوده شده
-                        if(mobileInputvalue == contact.mobile) {
-                            
-                            /* اگر نوع عملیات افزودن بعنوان مخاطب جدید باشد
-                            پیغام مربوطه را نمایش و متغیر را "نال" کرده تا افزوده نشود */
-                            if(btnType === 'addContent') {
-                                exeBtn.nextElementSibling.textContent = 'این مخاطب قبلا ذخیره شده است!'
-                                findContact = null
-
-                                // بدون بررسی موارد بعدی سریعا از حلقه خارج میشود
-                                break
-                            }
-
-                            /* اگر نوع عملیات ویرایش مخاطب موجود در لیست باشد
-                            که همان تغییر نام کاربری است مقدار جدید را اعمال میکند */
-                            findContact.username = nameInput.value
-
-                            /* به کمک این دستور و ردیابی ایندکس مخاطب موجود 
-                            مقدار جدید را جایگزین مقدار قبلی می کند */
-                            contactList.splice(index, 1, findContact)
-
-                            // و متغیر را "نال" کرده تا در دستورات بعدی مجددا افزوده نشود
-                            findContact = null
-                            console.log(contactList) // نمایش خروجی ویرایش در کنسول
-                            alert('مخاطب ویرایش شد. مشاهده در کنسول')
-
-                            // بدون بررسی موارد بعدی سریعا از حلقه خارج میشود
-                            break
-                        }
-
-                        // شمارنده
-                        index+=1
-                    } // انتهای دستورات حلقه مخاطبین ذخیره شده
-
-                    /* اگر مخاطب قبلا در لیست مخاطبین کاربر نباشد "نال" نمیشود 
-                    و هدف کاربر نیز افزودن باشد مخاطب جدید به لیست مخاطبین اجرا میشود*/
-                    if(findContact && btnType === 'addContent') {
-
-                        // داده مخاطب جدید که همان نام کاربری است اعمال می شود
-                        findContact.username = nameInput.value
-
-                        // مخاطب جدید به انتهای آرایه فرضی لیست مخاطبین اضافه میشود
-                        contactList.push(findContact)
-
-                        console.log(contactList) // نمایش خروجی افزودن مخاطب جدید در کنسول
-                        alert('مخاطب به لیست مخاطبین افزوده شد. مشاهده در کنسول')
-
-                    /* اگر شماره در لیست مخاطبین کاربر نباشد و هدف کاربر ویرایش مخاطب باشد
-                    مخاطب افزوده نمی شود و پیغام متناظر می دهد*/
-                    } else if(findContact && btnType === 'editContent') {
-                        exeBtn.nextElementSibling.textContent = 'این شماره در لیست مخاطبین وجود ندارد!'
-                    }
-                } else {
-                    nameInput.classList.add('error')
-                    exeBtn.nextElementSibling.textContent = ' نام دلخواه حداقل سه کاراکتری مخاطب را وارد نمایید...'
-                }
-            } else {
-                mobileInput.classList.add('error')
-                exeBtn.nextElementSibling.textContent = 'مخاطب ابتدا باید در سامانه ثبت نام نماید!'
-            }
-        } else {
-            mobileInput.classList.add('error')
-            exeBtn.nextElementSibling.textContent = 'شماره موبایل معتبر نیست!'
-        }
-    })
-    </script>    
+    <script src="addEdit.js"></script>   
 </body>
 </html>

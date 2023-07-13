@@ -24,26 +24,30 @@
 async function fetchFromApi(methodType, address, sendData, token) {
   if (!methodType) throw "methodType reqiured";
   if (!address) throw "address reqiured";
+  methodType = methodType.toLocaleUpperCase();
 
   if (methodType !== "GET" && !sendData)
     throw `sendData reqiured for ${methodType} method`;
 
+  token = token || localStorage.token;
   if (!address.toLocaleLowerCase().startsWith("user") && !token)
     throw `this endpoint need token to work!`;
 
   let result = null;
   let body = null;
 
-  try {
-    body = JSON.stringify(sendData);
-    if(Object.values(sendData).find((v) => typeof v === "object"))
-    throw 'ورودی غیر مجاز است!'
-  } catch {
-    result = {
-      code: -3,
-      message: "پارامتر های ورودی به تابعتون درست نیست!",
-    };
-    return result;
+  if (methodType !== "GET") {
+    try {
+      body = JSON.stringify(sendData);
+      if (Object.values(sendData).find((v) => typeof v === "object"))
+        throw "ورودی غیر مجاز است!";
+    } catch {
+      result = {
+        code: -3,
+        message: "پارامتر های ورودی به تابعتون درست نیست!",
+      };
+      return result;
+    }
   }
 
   try {
@@ -137,6 +141,37 @@ const farawin = {
       password,
     });
 
+    //save token
+    if (result.token) localStorage.token = result.token;
+
+    responseHandlerCallback && responseHandlerCallback(result);
+    !responseHandlerCallback && alert(result?.message);
+  },
+
+  /**
+   *  تابعی برای تست دریافت مخاطبین
+   * @param {responseHandlerCallback} responseHandlerCallback - یک تابع بفرستید تا جواب گرفته شده رو بررسی کنید و پیغام نمایش بدید
+   *
+   * @example
+   *  farawin.getContacts(res=> console.log(res))
+   *
+   */
+  getContacts: async (responseHandlerCallback) => {
+    const result = await farawin.fetch("GET", "contact");
+    responseHandlerCallback && responseHandlerCallback(result);
+    !responseHandlerCallback && alert(result?.message);
+  },
+
+  /**
+   *  تابعی برای تست دریافت یوزرها
+   * @param {responseHandlerCallback} responseHandlerCallback - یک تابع بفرستید تا جواب گرفته شده رو بررسی کنید و پیغام نمایش بدید
+   *
+   * @example
+   *  farawin.getUsers(res=> console.log(res))
+   *
+   */
+  getUsers: async (responseHandlerCallback) => {
+    const result = await farawin.fetch("GET", "user");
     responseHandlerCallback && responseHandlerCallback(result);
     !responseHandlerCallback && alert(result?.message);
   },
@@ -247,6 +282,29 @@ const farawin = {
         // if(success)
         //   window.location.assign('url...')
       }
+    );
+  },
+
+  fetch: fetchFromApi,
+
+  /**
+   * رجکس برای بررسی صحت موبایل
+   */
+
+  mobileRegex: /^09([0-9]{9})$/,
+
+  /**
+   * تابع کمکی برای تبدیل اعداد فارسی به انگلیسی
+   * @param {string} numberString رشته شامل ورودی از کاربر
+   * @return {string} رشته بدون اعداد فارسی
+   *
+   */
+  toEnDigit: function (numberString) {
+    return (numberString + "" || "").replace(
+      /[٠-٩۰-۹]/g, // Detect all Persian/Arabic Digit in range of their Unicode with a global RegEx character set
+      function (a) {
+        return a.charCodeAt(0) & 0xf;
+      } // Remove the Unicode base(2) range that not match
     );
   },
 };

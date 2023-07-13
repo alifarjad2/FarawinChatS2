@@ -218,8 +218,14 @@ p.msg {
 }
 
 .user_icon {
+    display: inline-block;
     width: 50px;
-    height: 48px;   
+    height: 48px;
+    background: url(image/user_icon2.png);
+    background-size: 100%;
+    text-align: center;
+    padding-top: 9px;
+    color: rgb(194, 135, 24);
     vertical-align: middle;
     margin-left: 10px;
 }
@@ -235,6 +241,7 @@ p.msg {
 .item_contact {
     cursor: pointer;
     margin-top: 4px;
+    position: relative;
 }
 
 .item_contact:hover {
