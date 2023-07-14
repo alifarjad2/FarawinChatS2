@@ -1,9 +1,9 @@
 const users = [
-  { name: "علی", phone: "1" },
+  { name: "علیرضا", phone: "1" },
   { name: "رضا", phone: "2" },
   { name: "ارش", phone: "3" },
   { name: "مامان", phone: "4" },
-  { name: "مدیر مالی شرکت", phone: "5" },
+  { name: "شرکت", phone: "5" },
   { name: "الناز", phone: "6" },
   { name: "ممد", phone: "7" },
   { name: "سینا", phone: "8" },
