@@ -1,0 +1,74 @@
+<!-- Special Thanks To Samane Ghazanfari -->
+<!-- GAP LOG -->
+<!-- https://web.gap.im/?p=@clickmisbot -->
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <!-- از خصیصه دایرکشن استفاده میکینیم برای راست چین کردن صفحه چون زبانمونو فارسی کردیم -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login form</title>
+    <!-- در این بخش نام عنوان صفحه را مینویسیم -->
+    <link rel="stylesheet" href="./index.css" />
+    <!--  با استفاده از تگ لینک فرمت صفحه را مشخص میکنیم و فایل سی اس اس و اچ تی ام ال را بهم لینک میکنیم -->
+  </head>
+  <body>
+    <!-- در بخش بادی تمام محتویات را مینویسیم -->
+    <div id="container" class="container">
+      <form class="form">
+        <div class="userName" style="margin-top: 16px">
+          <!--  چون این برچسب و فیلد بهم مرتبط هستن ان ها را در یک تگ دیو میگذاریم چون برای استایل دهی به این دیو احتیاج داریم -->
+          <label for="phone"> موبایل:</label>
+          <!-- برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
+          <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
+          <input type="tel" name="phone" id="phone" autofocus />
+          <span id="usererror"></span>
+          <!-- برای ایجاد یک فیلد که کاربر شماره تلفن را وارد کند از تگ اینپوت با تایپ تل ستفاده میکنیم -->
+        </div>
+
+        <div>
+          <!--   این برچسب و فیلد بهم مرتبط هستن ان ها را در یک تگ دیو میگذاریم چون برای استایل دهی به این دیو احتیاج داریم -->
+          <label for="pass">رمز عبور:</label>
+          <!--  برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
+          <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
+          <input
+            name="password"
+            autocomplete="new-password"
+            type="password"
+            name="pass"
+            id="pass"
+          />
+          <span id="passerror"> </span>
+          <!--  برای ایجاد یک فیلد که کاربر رمز عبور خود را وارد کند از تگ اینپوت با تایپ پس ستفاده میکنیم که این تایپ باعث میشود پسوورد قابل مشاهده نباشد-->
+        </div>
+
+        <div id="divpass2">
+          <label for="re-pass">تکرار رمز عبور:</label>
+          <!--  برای ایجاد یک برچسب از تگ لیبل ستفاده میکنیم -->
+          <!-- برای لینک کردن لیبل و اینپوت از خصیصه های فور و ایدی با اسم های مشترک استفاده میکنیم -->
+          <input
+            name="password2"
+            autocomplete="new-password"
+            type="password"
+            class="pass2"
+            id="pass2"
+          />
+          <!--  برای ایجاد یک فیلد که کاربر رمز عبور خود را وارد کند از تگ اینپوت با تایپ پس ستفاده میکنیم که این تایپ باعث میشود پسوورد قابل مشاهده نباشد-->
+          <span id="pass2error"> </span>
+          <!-- نمایش پیام اخطار -->
+        </div>
+
+        <button type="button" id="myBtn" >ورود</button>
+        <!-- برای ثبت اطلاعات از تگ باتن استفاده میکنیم با تایپ سابمیت که اطلاعات را رفرش و سیو کند  -->
+
+        <a id="changeMode" style="cursor: pointer; padding: 16px 0">ثبت نام</a>
+        <!-- برای لینک کردن صفحه لاگین از این تگ استفاده کردیم و ادرس صفحه ساین اپ را به ان میدهیم که اگر کاربر عضویت نداشت ثبت نام کند -->
+      </form>
+    </div>
+
+    <script defer src="./index.js"></script>
+    <script async src="./farawin.js"></script>
+  </body>
+</html>
