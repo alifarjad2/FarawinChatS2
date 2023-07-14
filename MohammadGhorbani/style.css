@@ -1,0 +1,67 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    flex-direction:row;
+}
+.sidebar{
+    width: 40%;
+    height: 97vh;
+    background-color: rgb(215, 240, 209);
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.sidebar_contacts{
+    display: flex;
+    flex-direction: column;
+   width: auto;
+   height: 85vh;
+   overflow-y: auto;
+}
+.sidebar_contacts div {
+    font-size: large;
+    padding-top:  20px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    width: 100%;
+    height: 75px;
+}
+.sidebar_contacts :hover{
+
+    background-color: rgb(173, 211, 162);
+}
+
+/* chat_tabs */
+
+.chat_tabs{
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    width: 100%;
+    height: auto;
+    /* background-color: rgb(50, 44, 212);
+    border: 1px solid black; */
+    border-radius: 15px;
+    position: relative;
+}
+.chat_tabs_header{
+    background-color: burlywood;
+    padding: 20px 10px 20px 0;
+    width: 100%;
+    min-height: 10vh;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+.send_message{
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 10vh;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: coral;
+
+}
