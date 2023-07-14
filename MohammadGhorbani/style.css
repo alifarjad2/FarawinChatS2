@@ -12,6 +12,9 @@
     border: 1px solid black;
     border-radius: 15px;
 }
+.title_header_sidebar{
+    padding-right: 10px;
+}
 .sidebar_contacts{
     display: flex;
     flex-direction: column;
@@ -28,6 +31,7 @@
     width: 100%;
     height: 75px;
 }
+
 .sidebar_contacts :hover{
 
     background-color: rgb(173, 211, 162);
@@ -47,14 +51,14 @@
     position: relative;
 }
 .chat_tabs_header{
-    background-color: burlywood;
+    background-color: rgb(215, 240, 209);
     padding: 20px 10px 20px 0;
     width: 100%;
     min-height: 10vh;
     border: 1px solid black;
     border-radius: 15px;
 }
-.send_message{
+/* .send_message{
 
     position: absolute;
     bottom: 0;
@@ -64,4 +68,17 @@
     border-radius: 15px;
     background-color: coral;
 
+} */
+
+.message_box{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    min-height: 10vh;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: rgb(215, 240, 209);
+    font-size: x-large;
+    padding-right: 15px;
 }
+
