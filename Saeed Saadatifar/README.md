@@ -28,4 +28,10 @@ in the all of my codes in project I have these Entities :
         ContactNumber : phoneNumber (text);
         ref : who create this Contact phoneNumber(text);
     }
+    #Messages {
+        Sender: phoneNumber (text);
+        Recaiver: phoneNumber (text);
+        id: Number:
+    }
     
+    ***********************************************************************************************************
