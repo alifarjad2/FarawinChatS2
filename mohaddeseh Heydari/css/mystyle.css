@@ -1,0 +1,291 @@
+input[type="text"]:focus {
+    outline: none;
+    box-shadow: 0px 0px 5px #61C5FA;
+    border: 1px solid #5AB0DB;
+}
+
+body {
+    height: 100vh;
+    background-image: url("../images/bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: rgba(242, 242, 242, 1);
+    font-family: 'Yekan Bakh';
+    font-style: normal;
+    font-weight: 400;
+}
+
+.signup {
+    padding: 2rem;
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        background-image: url("../images/bg-smal.PNG");
+    }
+}
+
+@media screen and (min-width: 480px) {
+    .signup {
+        width: 400px;
+    }
+}
+
+.logo {
+    width: 6rem;
+    height: 2rem;
+}
+
+.text-header {
+    font-size: 1.875rem;
+    padding-top: 6rem;
+}
+
+label {
+    color: var(--gray-6, #F2F2F2);
+    font-size: 1.125rem;
+    line-height: normal;
+}
+
+label>img {
+    width: 1.42688rem;
+    height: 1.42906rem;
+    margin-left: 7px;
+}
+
+input {
+    width: 21.875rem;
+    height: 3.125rem;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(255, 255, 255, 0.20);
+    background: rgba(242, 242, 242, 0.10);
+    backdrop-filter: blur(2px);
+}
+
+button {
+    width: 21.875rem;
+    height: 3.125rem;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(242, 242, 242, 0.20);
+    background: linear-gradient(90deg, rgba(168, 192, 255, 0.70) 0%, rgba(138, 150, 225, 0.70) 33.85%, rgba(63, 43, 150, 0.70) 100%);
+    background-blend-mode: lighten;
+    backdrop-filter: blur(2px);
+    color: #F2F2F2;
+    font-size: 1.125rem;
+}
+
+.btn {
+    color: rgba(242, 242, 242, 0.2);
+    background: rgba(242, 242, 242, 0.10);
+}
+
+
+button>img {
+    width: 1.5625rem;
+    height: 1.637rem;
+    margin-left: 7px;
+}
+
+.login_on_signup>p {
+    color: var(--gray-6, #F2F2F2);
+    font-size: 1.125rem;
+    line-height: normal;
+    opacity: 0.5;
+}
+
+.login_on_signup>a {
+    text-decoration: none;
+    color: var(--gray-6, #F2F2F2);
+    font-size: 1.125rem;
+    line-height: normal;
+}
+
+.login_on_signup>a:hover {
+    text-decoration: underline;
+}
+
+.error-call,
+.error-signup>p,
+.error-key,
+.error-key-repeat,
+.error-nameUser,
+.error-editcontact>p,
+.error-callEdit,
+.error-nameUserEdit {
+    color: var(--red, #EB5757);
+    font-size: 0.9375rem;
+    line-height: normal;
+    margin-bottom: 0px;
+}
+
+.error-call,
+.error-signup,
+.error-key,
+.error-key-repeat,
+.error-nameUser,
+.error-editcontact,
+.error-callEdit,
+.error-nameUserEdit {
+    display: none;
+}
+
+.error-call img,
+.error-signup>p>img,
+.error-key img,
+.error-key-repeat img,
+.error-nameUser img,
+.error-editcontact>p>img,
+.error-callEdit img,
+.error-nameUserEdit img {
+    width: 1.6875rem;
+    height: 1.9385rem;
+    margin-left: 7px;
+}
+
+
+
+
+
+/* addContact */
+.addContact,
+.editContact {
+    position: fixed;
+    top: 10px;
+    right: 25%;
+    width: 50%;
+    margin-top: 6rem;
+    padding: 1rem 2rem;
+    border-radius: 0.625rem;
+    border: 1px solid rgba(242, 242, 242, 0.05);
+    background: rgba(242, 242, 242, 0.05);
+    backdrop-filter: blur(10px);
+}
+
+.text-header-addContact,
+.text-header-editContact {
+    font-size: 1.875rem;
+    margin-bottom: 0px;
+}
+
+.modal-addcontact,
+.modal-editcontact {
+    animation: appear 250ms ease-in 1;
+    display: none;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+@keyframes diappear {
+    0% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+}
+
+
+
+
+
+
+
+/* chat */
+.chat-right,
+.chat-left-header,
+.chat-left-footer {
+    border-radius: 0.625rem;
+    border: 1px solid rgba(242, 242, 242, 0.20);
+    background: rgba(242, 242, 242, 0.10);
+    backdrop-filter: blur(2px);
+}
+
+.img-plase,
+.img-refresh,
+.img-edit {
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.img-profile {
+    width: 3rem;
+    height: 3rem;
+}
+
+
+/* تگ پی مارجین باتمش به طور پیشفرض 1 رم بود برا همین در این قسمت به طور دستی برداشتمش */
+.name-profile {
+    margin-bottom: 0;
+}
+
+.profile-select {
+    border-radius: 0.625rem;
+    border: 1px solid rgba(242, 242, 242, 0.20);
+    background: rgba(242, 242, 242, 0.10);
+    backdrop-filter: blur(2px);
+    margin: 0.5rem;
+}
+
+.profile:hover {
+    border-radius: 0.625rem;
+    background: rgba(242, 242, 242, 0.01);
+    backdrop-filter: blur(5px);
+    margin: 0.2rem;
+}
+
+.text-me {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='78' viewBox='0 0 320 78' fill='none'%3E%3Cg filter='url(%23filter0_b_169_177)'%3E%3Cmask id='path-1-inside-1_169_177' fill='white'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C4.47715 0 0 4.47715 0 10V68C0 73.5229 4.47716 78 10 78H183H299.458H319.542C319.543 77.9966 319.544 77.9932 319.545 77.9898C314.234 77.7522 310 73.3705 310 68V65V10C310 4.47715 305.523 0 300 0H10Z' /%3E%3C/mask%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M10 0C4.47715 0 0 4.47715 0 10V68C0 73.5229 4.47716 78 10 78H183H299.458H319.542C319.543 77.9966 319.544 77.9932 319.545 77.9898C314.234 77.7522 310 73.3705 310 68V65V10C310 4.47715 305.523 0 300 0H10Z' fill='%23F2F2F2' fill-opacity='0.1' /%3E%3Cpath d='M319.542 78V79H320.275L320.496 78.3013L319.542 78ZM319.545 77.9898L320.499 78.2906L320.891 77.049L319.59 76.9908L319.545 77.9898ZM1 10C1 5.02944 5.02944 1 10 1V-1C3.92487 -1 -1 3.92487 -1 10H1ZM1 68V10H-1V68H1ZM10 77C5.02944 77 1 72.9706 1 68H-1C-1 74.0751 3.92488 79 10 79V77ZM183 77H10V79H183V77ZM299.458 77H183V79H299.458V77ZM319.542 77H299.458V79H319.542V77ZM318.592 77.6891C318.59 77.6931 318.589 77.6967 318.589 77.698C318.588 77.6999 318.588 77.6995 318.589 77.6987L320.496 78.3013C320.497 78.2971 320.498 78.2934 320.499 78.2919C320.499 78.2897 320.499 78.29 320.499 78.2906L318.592 77.6891ZM319.59 76.9908C314.81 76.777 311 72.8332 311 68H309C309 73.9078 313.657 78.7274 319.501 78.9888L319.59 76.9908ZM311 68V65H309V68H311ZM311 65V10H309V65H311ZM300 1C304.971 1 309 5.02944 309 10H311C311 3.92487 306.075 -1 300 -1V1ZM10 1H300V-1H10V1Z' fill='white' fill-opacity='0.2' mask='url(%23path-1-inside-1_169_177)' /%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_b_169_177' x='-4' y='-4' width='327.545' height='86' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix' /%3E%3CfeGaussianBlur in='BackgroundImageFix' stdDeviation='2' /%3E%3CfeComposite in2='SourceAlpha' operator='in' result='effect1_backgroundBlur_169_177' /%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_backgroundBlur_169_177' result='shape' /%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: right;
+    width: 320px;
+}
+
+.text-you {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='313' height='107' viewBox='0 0 313 107' fill='none'%3E%3Cg filter='url(%23filter0_b_169_193)'%3E%3Cmask id='path-1-inside-1_169_193' fill='white'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M303 0C308.523 0 313 4.47716 313 10V96.0824C313 101.605 308.523 106.082 303 106.082H135.355C135.004 106.045 134.648 106.026 134.287 106.026H0.939148C0.938751 106.016 0.938324 106.007 0.937958 105.997C6.34265 105.861 10.6823 101.437 10.6823 96L10.6825 88.4049V10C10.6825 4.47715 15.1597 0 20.6825 0H303Z'/%3E%3C/mask%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M303 0C308.523 0 313 4.47716 313 10V96.0824C313 101.605 308.523 106.082 303 106.082H135.355C135.004 106.045 134.648 106.026 134.287 106.026H0.939148C0.938751 106.016 0.938324 106.007 0.937958 105.997C6.34265 105.861 10.6823 101.437 10.6823 96L10.6825 88.4049V10C10.6825 4.47715 15.1597 0 20.6825 0H303Z' fill='%23F2F2F2' fill-opacity='0.1'/%3E%3Cpath d='M135.355 106.082V107.082H135.302L135.249 107.077L135.355 106.082ZM0.939148 106.026V107.026H-0.0209351L-0.0600281 106.067L0.939148 106.026ZM0.937958 105.997L-0.0613403 106.034L-0.0993652 105.023L0.912872 104.997L0.937958 105.997ZM10.6823 96H9.68234V96L10.6823 96ZM10.6825 88.4049H11.6825V88.405L10.6825 88.4049ZM312 10C312 5.02945 307.971 1 303 1V-1C309.075 -1 314 3.92488 314 10H312ZM312 96.0824V10H314V96.0824H312ZM303 105.082C307.971 105.082 312 101.053 312 96.0824H314C314 102.157 309.075 107.082 303 107.082V105.082ZM135.355 105.082H303V107.082H135.355V105.082ZM134.287 105.026C134.683 105.026 135.075 105.047 135.46 105.088L135.249 107.077C134.933 107.043 134.612 107.026 134.287 107.026V105.026ZM0.939148 105.026H134.287V107.026H0.939148V105.026ZM1.93726 105.959C1.93756 105.967 1.93774 105.971 1.93832 105.985L-0.0600281 106.067C-0.0602417 106.061 -0.0609131 106.046 -0.0613403 106.034L1.93726 105.959ZM0.912872 104.997C5.77661 104.875 9.68234 100.893 9.68234 96H11.6823C11.6823 101.981 6.90869 106.847 0.963043 106.996L0.912872 104.997ZM9.68234 96L9.68253 88.4049L11.6825 88.405L11.6823 96L9.68234 96ZM11.6825 10V88.4049H9.68253V10H11.6825ZM20.6825 1C15.712 1 11.6825 5.02944 11.6825 10H9.68253C9.68253 3.92487 14.6074 -1 20.6825 -1V1ZM303 1H20.6825V-1H303V1Z' fill='white' fill-opacity='0.2' mask='url(%23path-1-inside-1_169_193)'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='filter0_b_169_193' x='-3.06201' y='-4' width='320.062' height='114.082' filterUnits='userSpaceOnUse' color-interpolation-filters='sRGB'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeGaussianBlur in='BackgroundImageFix' stdDeviation='2'/%3E%3CfeComposite in2='SourceAlpha' operator='in' result='effect1_backgroundBlur_169_193'/%3E%3CfeBlend mode='normal' in='SourceGraphic' in2='effect1_backgroundBlur_169_193' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    width: 313px;
+}
+
+.text-content {
+    color: var(--gray-6, #F2F2F2);
+    font-size: 1rem;
+}
+
+.text-date {
+    color: var(--blue-1, #2F80ED);
+    font-size: 1rem;
+}
+
+.text-me .text-content {
+    padding: 1rem 2rem 0rem 1rem;
+}
+
+.text-me .text-date {
+    padding: 0rem 2rem 1rem 1rem;
+}
+
+.text-you .text-content {
+    direction: ltr;
+    padding: 1rem 1rem 0rem 2rem;
+}
+
+.text-you .text-date {
+    direction: ltr;
+    padding: 0rem 1rem 1rem 2rem;
+}
+
+.new-text {
+    border-radius: 0.625rem;
+    border: 0px solid;
+}
