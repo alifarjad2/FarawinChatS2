@@ -4,31 +4,34 @@
 
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-  <!-- از خصیصه دایرکشن استفاده میکینیم برای راست چین کردن صفحه چون زبانمونو فارسی کردیم -->
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login form</title>
-    <!-- در این بخش نام عنوان صفحه را مینویسیم -->
-    <link rel="stylesheet" href="./index.css" />
-    <!--  با استفاده از تگ لینک فرمت صفحه را مشخص میکنیم و فایل سی اس اس و اچ تی ام ال را بهم لینک میکنیم -->
-  </head>
-  <body>
-    <!-- در بخش بادی تمام محتویات را مینویسیم -->
-    <div id="container" class="container">
-      <h3>contacts</h3>
-      <button >
-        Load Contacts
-      </button>
+<!-- از خصیصه دایرکشن استفاده میکینیم برای راست چین کردن صفحه چون زبانمونو فارسی کردیم -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login form</title>
+  <!-- در این بخش نام عنوان صفحه را مینویسیم -->
+  <link rel="stylesheet" href="./index.css" />
+  <!--  با استفاده از تگ لینک فرمت صفحه را مشخص میکنیم و فایل سی اس اس و اچ تی ام ال را بهم لینک میکنیم -->
+</head>
+
+<body>
+  <!-- در بخش بادی تمام محتویات را مینویسیم -->
+  <div id="container" class="container">
+    <h3>contacts</h3>
+    <button>
+      Load Contacts
+    </button>
+  </div>
+  <div class="drawer" id="contact-container"></div>
+  <div class="loading" id="loading">
+    <div style="margin: auto;">
+      LOADING
     </div>
-     <div class="drawer" id="contact-container"></div>
-     <div class="loading" id="loading">
-      <div style="margin: auto;">
-        LOADING
-      </div>
-     </div>
-    <script defer src="./farawin.js"></script>
-    <script defer src="./index.js"></script>
-  </body>
+  </div>
+  <script defer src="./farawin.js"></script>
+  <script defer src="./index.js"></script>
+</body>
+
 </html>
