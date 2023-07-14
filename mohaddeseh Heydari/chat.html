@@ -33,38 +33,32 @@
                 <div class="d-flex">
                     <p class="flex-grow-1">پیام رسان</p>
                     <img class="ms-2 img-plase" src="images/plase.svg" alt="plase">
-                    <img class="img-refresh" src="images/refresh.svg" alt="refresh">
+                    <img class="img-refresh" src="images/refresh.svg" alt="refresh" onclick="refreshList()">
                 </div>
-                <div>
-                    <div class="profile d-flex align-items-center ">
-                        <img class="img-profile ms-2" src="images/profile-circle.svg" alt="plase">
-                        <p class="flex-grow-1 name-profile">بهنام هاشم نیا</p>
-                    </div>
-                    <div class="profile-select d-flex align-items-center ">
-                        <img class="img-profile ms-2" src="images/profile-circle-action.svg" alt="plase">
-                        <p class="flex-grow-1 name-profile">بابا</p>
-                    </div>
+                <div class="list">
+                    <!-- در جی ای پر می شود -->
                 </div>
             </div>
             <div class="chat-left col-8 ">
                 <div class="chat-left-header d-flex align-items-center">
                     <div class="d-flex flex-grow-1 align-items-center">
-                        <img class="img-profile ms-2 me-2" src="images/profile-circle-action.svg" alt="plase">
-                        <p class="flex-grow-1 name-profile">بهنام هاشم نیا</p>
+                        <img class="img-profile-select blur ms-2 me-2" src="images/profile-circle-action.svg" alt="plase">
+                        <p class="flex-grow-1 name-profile" id="name-profile-select">یک مخاطب انتخاب کنید</p>
                     </div>
-                    <img class="ms-2 img-edit" src="images/edit.svg" alt="edit">
-                    <img class="ms-3 img-refresh" src="images/refresh.svg" alt="refresh">
+                    <img class="ms-2 img-edit blur" src="images/edit.svg" alt="edit">
+                    <img class="ms-3 img-refresh-text blur" src="images/refresh.svg" alt="refresh">
                 </div>
                 <div class="chat-left-content">
                     <div class="text-me mt-2 ">
                         <p class="text-content">سلام، خوبی؟
-                            دیشب مهمان اومد خانه مون این عالمه وقتم سر  مهمان رفت تو پروژه را تا کجا پیش رقتی تونشتی باگ رو بگیری
+                            دیشب مهمان اومد خانه مون این عالمه وقتم سر مهمان رفت تو پروژه را تا کجا پیش رقتی تونشتی باگ
+                            رو بگیری
                         </p>
                         <p class="text-date">۳ فروردین - ۱۱:۳۸</p>
                     </div>
-                    <div class="text-you me-auto" >
+                    <div class="text-you me-auto">
                         <p class="text-content">سلام، ممنون
-                             خوب پیش میرم و آخراشه ... تو چکار کردی تا چثد پیش رفتی پروژه زو 
+                            خوب پیش میرم و آخراشه ... تو چکار کردی تا چثد پیش رفتی پروژه زو
                         </p>
                         <p class="text-date">۳ فروردین - ۱۱:۳۸</p>
                     </div>
@@ -95,7 +89,8 @@
                 </div>
                 <br>
 
-                <label for="nameUser" class="mt-4"><img src="images/icon _user tick_.svg" alt="icon_nameUser">نام و نام خانوادگی</label><br>
+                <label for="nameUser" class="mt-4"><img src="images/icon _user tick_.svg" alt="icon_nameUser">نام و نام
+                    خانوادگی</label><br>
                 <input type="text" id="nameUser" class="mt-2" placeholder="محدثه حیدری" value=""><br>
                 <div class="mt-2 error-nameUser">
                     <!-- برای اینکه سی اس اس این تگ در صفحه لاگین و ریجستر و فقط تغیر در اینجا اعمال شود استایل درون خطی دادم  -->
@@ -135,7 +130,8 @@
 
             <form class="row mt-3">
                 <!-- type="password" امنیت را میاورد پایین ؟ -->
-                <label for="callEditContact" class="mt-4"><img src="images/icon _call_.svg" alt="icon_call">موبایل</label><br>
+                <label for="callEditContact" class="mt-4"><img src="images/icon _call_.svg"
+                        alt="icon_call">موبایل</label><br>
                 <input type="text" id="callEditContact" class="mt-2" placeholder="6110 207 0915" autofocus><br>
                 <div class="mt-2 error-callEdit">
                     <p class="d-flex align-items-center">
@@ -146,7 +142,8 @@
                 </div>
                 <br>
 
-                <label for="nameUserEditContact" class="mt-4"><img src="images/icon _user tick_.svg" alt="icon_nameUser">نام و نام خانوادگی</label><br>
+                <label for="nameUserEditContact" class="mt-4"><img src="images/icon _user tick_.svg"
+                        alt="icon_nameUser">نام و نام خانوادگی</label><br>
                 <input type="text" id="nameUserEditContact" class="mt-2" placeholder="محدثه حیدری" value=""><br>
                 <div class="mt-2 error-nameUserEdit">
                     <!-- برای اینکه سی اس اس این تگ در صفحه لاگین و ریجستر و فقط تغیر در اینجا اعمال شود استایل درون خطی دادم  -->
@@ -180,7 +177,8 @@
 
 
     </div>
-    <script src="js/contant.js" defer></script>
+    <script defer src="js/farawin.js"></script>
+    <script defer src="js/contant.js"></script>
 
 </body>
 
