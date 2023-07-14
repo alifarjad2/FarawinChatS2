@@ -1,5 +1,5 @@
-// اینجا بررسی میکنیم اگه توکن وجود نداشت هدایت میشه به صفحه ثبت نام و ورود در پوشه مربوطه 
-if (!localStorage.token) location.assign("./auth/index.html");
+
+  if (!localStorage.token) location.assign("/auth");
 
 const button = document.querySelector("button");
 
@@ -12,14 +12,30 @@ let contactContainer = document.querySelector("#contact-container");
 const render = () => {
   if (!window.list) return;
 
+  const contactList = document.querySelector("contact-list");
+
   contactContainer.innerHTML = "";
 
   for (const contactItem of window.list) {
     const name = contactItem.name;
+
+
     let div = document.createElement("div");
+
+    div.className = "contact-item";
     div.innerHTML = `
-     ${name}
+   
+      <div class="avatar">
+
+       <div class="name">${name} </div>
+
+       <div class="initial">${name.charAt(0)} ${name.charAt(name.length - 1)}</div>
+      
+        </div>
+     
     `;
+
+
 
     contactContainer.appendChild(div);
     // const {userName, name} = contactItem.userName
@@ -38,6 +54,11 @@ const sync = () => {
     contactContainer.style.display = "block";
   });
 };
+
+
+
+
+
 
 let _count = 0;
 const applyFrameRender = () =>

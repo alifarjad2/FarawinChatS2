@@ -1,0 +1,141 @@
+body {
+    background-image: url(./img/stripes-light.webp);
+}
+
+.container {
+/* از دیسپلی گرید برای این استفاده کردم چون سیستم دو بعدی و کار کردن باهاش راحته و بهتر میشه مدیریت کرد لی اوت رو  */
+    display: grid;
+    height: 80vh;
+    /* background-color: red; */
+    /* width: 90%; */
+    margin: 0 10px;
+    /* اینجا من یک فراگمنت برای ستون اول و ستون دوم رو سه فراگمنت انتخاب کردم چون ب نسبت همدیگه وقتی صفحه بزرگ کوچیک میشه انعطاف داشته باشه و ستون دومی سه برابر ستون اولی باشه  */
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr  4fr 1fr;
+    /* اینجا بجای گپ سطر و ستون از پروپرتی خود گپ استفاده کردم  و پنح پیکسل بین سطر و ستون فاصله دادم  */
+    gap: 5px;
+}
+
+.headerContact{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 30px;
+    overflow: hidden;
+    /* یک رنگ پس زمینه برای شروع کار درست کردم ک هر المنت مشخص باشه کدوم جایگاه رو داره  */
+    background-color: rgba(146, 216, 152,0.4);
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 50px;
+    /* اینجا گفتم از ستون 2 تا ستون 3 و از سطر یک تا سطر 2 رو بگیره  */
+    grid-column: 2/3;
+    grid-row: 1/2;
+    
+}
+.headerContact p {
+position: absolute;
+right: 20px;
+  }
+
+.contactContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgba(146, 216, 152,0.4);
+    padding: 10px;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    overflow: auto;
+    max-height:80vh ;
+    min-width: 210px;
+    /* display: none; */
+}
+
+.contactContainer div 
+    {
+        padding: 7px;
+        /* border: 1px solid black; */
+        margin: 2px;
+        text-align: center;
+        font-size: large;
+    }
+#contact-container > div:hover
+{
+    background-color: rgba(146, 216, 152,0.8);
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+
+
+.headerContactContainer > img {
+    padding-left: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+    width: 20px;
+}    
+
+.chatPage{
+    /* background-color:#0be881; */
+    grid-column: 2/3;
+    grid-row: 2/3;
+    height: 400px;
+    margin: 10px;
+    overflow: auto;
+}
+
+
+#send {
+    padding: 10px;
+    margin-right: 80px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color:rgba(176, 146, 216, 0.6);   
+}
+
+#recive {
+    padding: 10px;
+    margin-left: 80px;
+    background-color:rgba(146, 216, 152,0.6);
+}
+
+/* کلاس کاستوم دادم برای اینکه بتونم دیو هام رو بصورت کلی ویژگی های مشترکش رو اعمال  */
+.customItem {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;   
+    
+}
+
+.inputText{
+    /* background-color: #ffa801; */
+    grid-column: 2/3;
+    grid-row: 3/4;
+    height: 40px;
+}
+
+.inputText > input{
+
+    background-color: rgba(146, 216, 152,0.4);
+
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    font-size: larger;
+    padding-right: 20px;
+}
+
+#btnSend {
+    position: absolute;
+    width: 30px;
+    left: 30px;
+    cursor: pointer;
+}

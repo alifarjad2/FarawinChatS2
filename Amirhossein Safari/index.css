@@ -1,0 +1,46 @@
+.contact-container {
+  display:flex;
+  flex-wrap: wrap;
+  
+}
+
+.contact-item {
+  margin-top: 3px;
+  height: 40px;
+  width: 300px;
+  padding: 10px;
+  border: 1px solid rgb(5, 8, 36);
+  border-radius: 5px;
+  background-color: #7a8296a2;
+}
+
+.contact-list {
+  width: 300px; /* عرض لیست مخاطبین */
+  height: 100%; /* ارتفاع لیست مخاطبین */
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(37, 40, 70, 0.796);
+  margin-bottom: 10px;
+  
+}
+
+.name {
+  padding-top:20%;
+  padding-right: 60px;
+  display: inline-flex;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.initial{
+display: -webkit-inline-flex;
+margin-right:13px;
+
+color:blanchedalmond;
+}

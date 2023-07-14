@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>messenger</title>
+    <link rel="icon" href="images/logo.svg">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/mystyle.css" type="text/css">
+</head>
+
+<body dir="rtl">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <div class="container chat">
+        <div class="d-flex justify-content-center ">
+            <img src="images/logo.svg" class="logo mt-4" alt="logo">
+        </div>
+
+        <p>صفحه پیام رسانی</p>
+
+        <div class="row">
+            <div class="chat-right col-4  p-3">
+                <div class="d-flex">
+                    <p class="flex-grow-1">پیام رسان</p>
+                    <img class="ms-2 img-plase" src="images/plase.svg" alt="plase">
+                    <img class="img-refresh" src="images/refresh.svg" alt="refresh">
+                </div>
+                <div>
+                    <div class="profile d-flex align-items-center ">
+                        <img class="img-profile ms-2" src="images/profile-circle.svg" alt="plase">
+                        <p class="flex-grow-1 name-profile">بهنام هاشم نیا</p>
+                    </div>
+                    <div class="profile-select d-flex align-items-center ">
+                        <img class="img-profile ms-2" src="images/profile-circle-action.svg" alt="plase">
+                        <p class="flex-grow-1 name-profile">بابا</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-left col-8 ">
+                <div class="chat-left-header d-flex align-items-center">
+                    <div class="d-flex flex-grow-1 align-items-center">
+                        <img class="img-profile ms-2 me-2" src="images/profile-circle-action.svg" alt="plase">
+                        <p class="flex-grow-1 name-profile">بهنام هاشم نیا</p>
+                    </div>
+                    <img class="ms-2 img-edit" src="images/edit.svg" alt="edit">
+                    <img class="ms-3 img-refresh" src="images/refresh.svg" alt="refresh">
+                </div>
+                <div class="chat-left-content">
+                    <div class="text-me mt-2 ">
+                        <p class="text-content">سلام، خوبی؟
+                            دیشب مهمان اومد خانه مون این عالمه وقتم سر  مهمان رفت تو پروژه را تا کجا پیش رقتی تونشتی باگ رو بگیری
+                        </p>
+                        <p class="text-date">۳ فروردین - ۱۱:۳۸</p>
+                    </div>
+                    <div class="text-you me-auto" >
+                        <p class="text-content">سلام، ممنون
+                             خوب پیش میرم و آخراشه ... تو چکار کردی تا چثد پیش رفتی پروژه زو 
+                        </p>
+                        <p class="text-date">۳ فروردین - ۱۱:۳۸</p>
+                    </div>
+                </div>
+                <div class="chat-left-footer d-flex align-items-center">
+                    <input class="flex-grow-1 new-text" type="text" placeholder="پیام...">
+                    <img class="me-3 ms-3 img-plase" src="images/send.svg" alt="plase">
+                </div>
+            </div>
+        </div>
+
+        <section class="modal-addcontact hidden addContact">
+            <div class="row d-flex align-items-center justify-content-between">
+                <p class="col-10 text-header-addContact">افزودن مخاطب</p>
+                <button class="col-2 btn-close btn-close-white"></button>
+            </div>
+
+            <form class="row mt-3">
+                <!-- type="password" امنیت را میاورد پایین ؟ -->
+                <label for="call" class="mt-4"><img src="images/icon _call_.svg" alt="icon_call">موبایل</label><br>
+                <input type="text" id="call" class="mt-2" placeholder="6110 207 0915" autofocus><br>
+                <div class="mt-2 error-call">
+                    <p class="d-flex align-items-center">
+                        <img src="images/icon _error_.svg" alt="error">
+                        <!-- برای دسترسی راحت در جی اس اسپم قرارا دادم -->
+                        <span id="text-error-call"></span>
+                    </p>
+                </div>
+                <br>
+
+                <label for="nameUser" class="mt-4"><img src="images/icon _user tick_.svg" alt="icon_nameUser">نام و نام خانوادگی</label><br>
+                <input type="text" id="nameUser" class="mt-2" placeholder="محدثه حیدری" value=""><br>
+                <div class="mt-2 error-nameUser">
+                    <!-- برای اینکه سی اس اس این تگ در صفحه لاگین و ریجستر و فقط تغیر در اینجا اعمال شود استایل درون خطی دادم  -->
+                    <p class="d-flex align-items-center" style="margin-bottom: 0px;">
+                        <img src="images/icon _error_.svg" alt="error">
+                        <!-- برای دسترسی راحت در جی اس اسپم قرارا دادم -->
+                        <span id="text-error-nameUser"></span>
+                    </p>
+                </div>
+                <br>
+            </form>
+            <!-- چون باتم کلاس ردیف می گرفت عکس و متن در یک خط قرار نمی گرفت برای همین داخل دیو گذاشتم باتم را -->
+            <div class="row mt-4">
+                <button class="d-flex justify-content-center align-items-center " id="btn-add-contact">
+                    <img src="images/icon _user tick_.svg" alt="user">
+                    افزودن مخاطب
+                </button>
+            </div>
+            <div class="row mt-2 error-signup">
+                <p class="d-flex justify-content-center align-items-center">
+                    <img src="images/icon _error_.svg" alt="error">
+                    افزودن ناموفق
+                </p>
+            </div>
+
+            <div class="row mt-2 login_on_signup">
+                <p class="d-flex justify-content-center"> میخوای تغیرنام بدی؟</p>
+                <a class="d-flex justify-content-center" href="/editContant.html">ویرایش</a>
+            </div>
+        </section>
+
+        <section class="modal-editcontact hidden editContact">
+            <div class="row d-flex align-items-center justify-content-between">
+                <p class="col-10 text-header-editContact">ویرایش نام مخاطب</p>
+                <button class="col-2 btn-close btn-close-white btn-close-editcontact"></button>
+            </div>
+
+            <form class="row mt-3">
+                <!-- type="password" امنیت را میاورد پایین ؟ -->
+                <label for="callEditContact" class="mt-4"><img src="images/icon _call_.svg" alt="icon_call">موبایل</label><br>
+                <input type="text" id="callEditContact" class="mt-2" placeholder="6110 207 0915" autofocus><br>
+                <div class="mt-2 error-callEdit">
+                    <p class="d-flex align-items-center">
+                        <img src="images/icon _error_.svg" alt="error">
+                        <!-- برای دسترسی راحت در جی اس اسپم قرارا دادم -->
+                        <span id="text-error-callEdit"></span>
+                    </p>
+                </div>
+                <br>
+
+                <label for="nameUserEditContact" class="mt-4"><img src="images/icon _user tick_.svg" alt="icon_nameUser">نام و نام خانوادگی</label><br>
+                <input type="text" id="nameUserEditContact" class="mt-2" placeholder="محدثه حیدری" value=""><br>
+                <div class="mt-2 error-nameUserEdit">
+                    <!-- برای اینکه سی اس اس این تگ در صفحه لاگین و ریجستر و فقط تغیر در اینجا اعمال شود استایل درون خطی دادم  -->
+                    <p class="d-flex align-items-center" style="margin-bottom: 0px;">
+                        <img src="images/icon _error_.svg" alt="error">
+                        <!-- برای دسترسی راحت در جی اس اسپم قرارا دادم -->
+                        <span id="text-error-nameUserEdit"></span>
+                    </p>
+                </div>
+                <br>
+            </form>
+            <!-- چون باتم کلاس ردیف می گرفت عکس و متن در یک خط قرار نمی گرفت برای همین داخل دیو گذاشتم باتم را -->
+            <div class="row mt-4">
+                <button class="d-flex justify-content-center align-items-center " id="btnEditcontact">
+                    <img src="images/icon _user tick_.svg" alt="user">
+                    ذخیره نام جدید
+                </button>
+            </div>
+            <div class="row mt-2 error-editcontact">
+                <p class="d-flex justify-content-center align-items-center">
+                    <img src="images/icon _error_.svg" alt="error">
+                    ویرایش نام ناموفق
+                </p>
+            </div>
+
+            <div class="row mt-2 login_on_signup">
+                <p class="d-flex justify-content-center"> میخوای مخاطب جدید اضافه کنی؟</p>
+                <a class="d-flex justify-content-center" href="/addContact.html">افرودن</a>
+            </div>
+        </section>
+
+
+    </div>
+    <script src="js/contant.js" defer></script>
+
+</body>
+
+</html>

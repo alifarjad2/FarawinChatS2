@@ -27,7 +27,8 @@ body {
 
   padding-top: 8px;
   /* //animation */
-
+  opacity: 0;
+  transform: scale(0.666);
   transition: 0.444s all;
 }
 
@@ -130,31 +131,4 @@ form span {
   color: rgb(212, 70, 70);
   padding: 0 32px 4px 32px;
   white-space: pre-line;
-}
-
-.drawer {
-  position: fixed;
-  background: #f0f0f0;
-  /* height: 300px; */
-  width: 354px;
-  top: 0;
-  right: 0;
-  /* left: 0; */
-  bottom: 0;
-  display: none;
-}
-
-.loading {
-  display: none;
-  text-align: center;
-
-  position: fixed;
-  background: #3f3f3f88;
-  backdrop-filter: blur(4px);
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-
-  cursor: wait;
 }

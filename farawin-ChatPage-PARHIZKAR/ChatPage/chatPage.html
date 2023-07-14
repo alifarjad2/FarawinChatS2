@@ -1,0 +1,112 @@
+<!-- #region Doctype/HTML -->
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <!-- از خصیصه دایرکشن استفاده میکینیم برای راست چین کردن صفحه چون زبانمونو فارسی کردیم -->
+  <!-- #region header -->
+  <head>
+    <!-- هدر قسمتی برای وضع یک سری قوانین و در کل صورت فایل است  -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- تگ لینک برای شناساندن یک سری فایل ها به اچ تی ام ال است تا از آنها استفاده کند و در اینجا من فایل سی اس اس را ک دارای استایل های این فایل است را به اچ تی ام ال معرفی کرده ام -->
+    <link rel="stylesheet" href="Chat.css" />
+    <!-- در اینجا سرور فونت آسام را برای استفاده از فونت آسام به فایلم لینک کرده ام -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Chat Page</title>
+    <!-- در این بخش نام عنوان صفحه را مینویسیم -->
+  </head>
+<!-- #endregion -->
+<!-- #region body -->
+  <!-- تگ بادی تگی است که کذ های اصلی وبسایت یا برنامه را در بر دارد و بدنه فایل است -->
+  <body>
+    <!-- سکشن یک نوع تگ علامت گذاری برای قسمت بندی کد هاست -->
+    <!-- از این تگ استفاده کردم تا هم نظم بیشتری به کد بدهم و از ان برای چیدمان صفحه بهره ببرم -->
+    <section class="page">
+      <!-- #region Buttons -->
+      <!-- تگ باتن تگیست برای ساخت یک دکمه که برای کار های مختلفی استفاده میشود -->
+      <!-- ازین تگ استفاده کردم تا دکمه ای برای دانلود مخاطبین و نشان دادن آن ها در لیست مخاطبین بهره ببرم -->
+      <button id="buttonLoading">Load contacts</button>
+      <!-- در اینجا من از فونت آسام استفاده کردم که یک نوع شکل دکمه کلوز یا بستن بسازم و از ان برای بستن منوی مخاطبین بهره ببرم -->
+      <!-- در واقع دکمه ما یک نوع فونت است که بجای داشتن الفبای زبان های مختلف دارای اشکال درون خود است و دارای تمام خصیصه های فونت است -->
+      <div class="menu-icon" id="menu-icon">
+        <i style="font-size: 24px" class="fa">&#xf0c9;</i>
+      </div>
+      <!-- دوباره هم از فونت آسام استفاده کردم تا دکمه ای برای باز کردن منوی مخاطبین بسازم -->
+      <div class="close__icon" id="close-icon">
+        <i
+          style="font-size: 24px"
+          class="fa fa-window-close"
+          aria-hidden="true"
+        ></i>
+      </div>
+      <div class="add__contact" id="add-contact">
+        <i class="fa fa-pencil" aria-hidden="true" style="font-size: 24px"></i>
+      </div>
+      <!-- #endregion -->
+      <!-- #region contact menu -->
+      <!-- در اینجا از تگ دیو استفاده کردم تا محیطی را به منوی مخاطبین اختصاص دهم و در آن پیاده سازی کنم -->
+      <div class="right-menu" id="contact-menu">
+        <!-- از تگ اچ 2 استفاده کردم تا هدری برای منوی مخاطبین بسازم تگ اچ 2 تگی است که متن محور بوده و به مرور گر یک سری اطلاعات میدهد  -->
+        <h2>مخاطبین</h2>
+        <!-- تگ یوال یا لیست های نامنظم تگی است که برای ساختن یک لیست بکار میرود و تگ پدر ال آی یا لیست هاست که من لیست های آن را در اینجا نساختم تا توسط جی اس ساخته و مخاطبین دریافتی از سرور را در ان جایگذاری کند -->
+        <ul id="contact-list"></ul>
+      </div>
+      <!-- #endregion -->
+      <!-- #region ChatPage -->
+      <!-- در اینجا نیز از تگ دیو استفاده کردم تا محیطی را به صفحه چت اختصاص دهم  -->
+      <div class="chat" id="chat">
+        <!-- #region chatHeader -->
+        <!-- ین تگ دیو را به هدر چت اختصاص داده ام تا دکمه لودینگ مخاطب و همچنین مشخصات مخاطب انتخابی از منوی مربوطه در اینجا نمایش داده شود -->
+        <div class="chat__header" id="chat-header">
+          <!-- در اینجا ازین تگ دیو بهره بردم تا چیدمان مشخصات مخاطبین را در هدر کنترل کنم  -->
+          <div id="contact-info">
+            <!-- این تگ دیو را بکار بردم تا آواتار برای مخاطب بسازم و دو حرف اول اسم او را نیز در این قسمت توسط جی اس دریافت و نمایش دهم -->
+            <div class="avatar" id="avatar"></div>
+            <!-- در اینجا از تگ اچ وان استفاده کردم تا به عنوان تگ هدر درجه یک اسم مخاطب را از منو دریافت و نشان دهد و بفهمیم در حال حاضر با چه کسی چت میکنیم -->
+            <div class="contact__name"><h1 id="contact-name-h1">test</h1></div>
+          </div>
+        </div>
+        <!-- #endregion -->
+        <!-- #region ChatBody -->
+        <!-- این تگ دیور در بر دارنده پیغام های ردو بدل شده در هنگام چت است که از دیو استفده کردم تا محیطی را به آن اختصاص دهم -->
+        <div class="chat__body" id="chat-body">
+          <!-- تگ پی برای کارایی متن محور است و از آن برای نشان دادن یک پاراگراف استفاده میکنیم حال من از این دو تگ استفاده کردم تا پیام های درون چت را نمایش دهم -->
+          <p id="sender">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Accusantium accusamus cumque deleniti assumenda eveniet impedit
+            atque ipsum, tempore harum perspiciatis sequi quisquam optio
+            voluptatem at eos? Explicabo est ipsa placeat!
+          </p>
+          <p id="reciver">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+            veritatis officiis molestiae dignissimos corporis cum illum sed quos
+            non quia!
+          </p>
+        </div>
+        <!-- #endregion -->
+        <!-- #region chat writingMassage -->
+        <!-- در اینجا تگی دیوی بکار بردم تا محیطی را به دکمه و اینپوت برای فرستادن پیام اختصاص دهم -->
+        <div class="chat__input" id="chat-input">
+          <!-- تگ اینپوت تگی است که یه مقدار دریافتی را از کاربر گرفته و از آن برای کار های مختلفی میتوان استفاده کرد و من از آن برای قسمت نوشتن پیام و ارسالش در چت استفاده کردم -->
+          <input type="text" placeholder="Type something..." />
+          <!-- در اینجا من از تگ باتن استفاده کردم تا دکمه ای برای ارسال پیام توسط کاربر را بسازم و همچنین  از فونت آسام استفاده کردم تا ایکون سند یا ارسال پیام را درون باتن جاگذاری کنم تا کاربر یو ایکس بهتری را نجربه کند -->
+          <button class="send__button">
+            <i
+              class="fa fa-send"
+              style="font-size: 24px; color: rgb(19, 255, 176)"
+            ></i>
+          </button>
+        </div>
+        <!-- #endregion -->
+      </div>
+      <!-- #endregion -->
+    </section>
+    <!-- دراینجا دو تگ اسکریپت داریم که برای شناساندن فایل جی اس به اچ تی ام ال بکار میروند و یا حتی میتوان به صورت اینترنال جی اس را درون فایل اچ تی ام ال نوشت و یک دیفر به آنها داده ام تا اول فایل دام ساخته و بعد جی اس ها بارگذاری و لود شوند و کار بکنند -->
+    <script src="./ChatPage.js" defer></script>
+    <script src="./farawin.js" defer></script>
+  </body>
+  <!-- #endregion -->
+</html>
+<!-- #endregion -->

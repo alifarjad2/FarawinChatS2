@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>صفحه پیام رسان</title>
+    <link rel="stylesheet" href="./Messenger.css">
+</head>
+<body>
+   <h3> صفحه پیام رسانی :</h3> 
+    <div id="container" class="container">
+        <!-- از بلاک دیو استفاده کردم برای جداسازی المنت ها و بعدا داخلش بتونم محتوام رو بذارم  و به هرکدوم کلاس مربوط ب خودش رو دادم  -->
+        
+        <div class="headerContact " >
+            <p id="headerContactValue">مخاطب</p> <img src="./img/Edit.PNG" alt="edit" width="40px" height="40px"> <img src="./img/refresh.PNG" alt="refresh" width="40px" height="40px">
+        </div>
+        
+        <div class="contactContainer ">
+
+            <div class="headerContactContainer"> پیام رسان فراوین  <img src="./img/plus.PNG" alt="pluse" onclick="addcontact()"> <img src="./img/refresh.PNG" alt="refresh" onclick="refreshContact()"></div>
+            <div  id="contact-container" onclick="selectedContact(event)">
+
+            <p>لیست مخاطبین وجود ندارد</p>
+            
+            </div>
+
+        </div>
+
+        <div class="chatPage customItem">
+            
+            <div id="send">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus sit omnis sapiente, veniam ab praesentium dolor iure modi veritatis dolores debitis consequuntur fugit.</div>
+
+            <div id="recive">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perspiciatis quo ducimus consequatur error eum accusamus sunt, quasi veniam nemo.</div>
+        
+        </div>
+
+        <div class="inputText customItem"><input type="text" placeholder="پیام ..."> <img src="./img/send.PNG" alt="send" id="btnSend"> </div>
+
+    </div>
+
+    <script defer src="./farawin.js"></script>
+    <script defer src="./messenger.js"></script>
+</body>
+</html>
