@@ -1,0 +1,104 @@
+body{
+    background: url(./image/stripes-light.webp);
+    box-sizing: border-box;
+    /* انداره فقط شامل محتوا است که تغییری در سایز اصلی اعمال نشود و به تمام تگ ها اعمال میشود */
+}
+
+*{
+    box-sizing: inherit;
+    /* ارث بری کردن تمام محتوای صفحه از مقدار باکس سایزیگ */
+}
+
+.container{
+    display: flex;
+    /* برای راحتی استایل دادن به فرم از این ویژگی استفاده میکنیم که پدر فرم محسوب میشود */
+    justify-content: center;
+    /*  وسط چین کردن محتوای باکس در راستای افقی */
+    align-items: center;
+    /* وسط چین کردن محتوا در راستای عمودی */
+    width: auto;
+    /* تنظیم خودکار پهنا */
+    min-height: 100vh;
+    /*  حداقل ارتفاعی که باکس میگیرد */
+}
+
+.form{
+    position: relative;
+    width: 350px;
+    /*  تنظیم پهنا */
+   height: 450px;
+    /*تنظیم ارتفاع */;
+    border: 1.5px solid black;
+    /* اعمال کادر بوردر و تنظیم رنگ و سایز ان */
+    background-color:rgb(220, 235, 216) ;
+    /* رنگ پیش زمینه فرم */
+    display: flex;
+    justify-content: center;
+     /*  وسط چین کردن محتوای باکس در راستای افقی */
+    align-items: center;
+    /* وسط چین کردن محتوا در راستای عمودی */
+    border-radius: 20px;
+    /* تنظیم شعاع بوردر */
+    flex-direction: column;
+    /* تنظیم عناصر به صورت ستونی به همان ترتیب html */
+}
+
+label{
+    display: inline-block;
+    /* درون خطی کردن کد و اعمال پدینگ */
+    padding: 10px;
+    /* فاصله دادن بین عناصر از پایین */
+    font-size: 20px;
+    /* سایز فونت */
+    font-family: tahoma;
+    /* نوع فونت */
+    font-weight:normal;
+    /* ضخامت فونت */
+}
+
+input{
+    display: block;
+    /* برای نمایش خطی و تمام عرض تگ */
+    width:230px ;
+    height: 45px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    /* فاصله دادن از پایین بین این عنصر و فضای اطراف */
+    
+}
+
+button{
+    width :230px;
+    height:45px;
+    border-radius: 10px;
+     /* تنظیم شعاع بوردر */
+    /* font-size: 22px; */
+     /* سایز فونت */
+    /* font-weight: normal; */
+    /* ضخامت فونت */
+    background-color: rgb(116, 166, 62);
+    position: absolute;
+    bottom: 50px;
+
+}
+
+span{
+    color: red;
+}
+
+h1{
+    text-shadow: 2px 2px 2px black;
+    color:  rgb(116, 166, 62);
+    position: absolute;
+    top: 10px;
+
+}
+
+.exit{
+    position: absolute;
+    top : 5px;
+    left : 8px;
+}
+.exit :hover{
+    cursor: pointer;
+}

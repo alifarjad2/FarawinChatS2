@@ -1,0 +1,113 @@
+
+.container{
+    height: 90vh;
+    margin: 10px auto;
+    gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 3fr 1fr;
+}
+
+.sideBar{
+    background-color: rgb(220, 235, 216);
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px 5px;
+    grid-column: 1/2;
+    grid-row: 1/-1;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+}
+
+
+.header{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    background-color: rgb(220, 235, 216);
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 50px;
+    padding: 10px ;
+    position: relative;
+}
+
+.chatContent{
+    text-align: center;
+    font-weight: bolder;
+    grid-column: 2/3;
+    grid-row: 2/3;
+    background: url(/auth/stripes-light.webp);
+    min-height: 80vh;
+}
+
+.sendMessage{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    background-color: rgb(220, 235, 216);
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+}  
+
+.inputMessege{
+    background-color: rgb(220, 235, 216);
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+    height: 40px;
+    width: 100%;
+    font-size: larger;
+}
+
+.sendMessage > div {
+    position: absolute;
+    left: 10px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.headerSideBar{
+    margin-top: 10px;
+    text-align:right;
+    display: inline-flex;
+    position: relative;
+}
+label{
+    font-weight: bolder;
+    font-size: large;
+    padding-right: 5px;
+}
+.add-contact{
+    position: absolute;
+    left: 35px;
+}
+.edit-contact{
+    position: absolute;
+    left: 5px;
+}
+
+.contact-container{
+    padding: 10px ;
+}
+
+.contact-container   :hover{
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: rgb(173, 203, 165);
+    cursor: pointer;
+}
+
+a :hover{
+    cursor: pointer;
+}
+.edit-Contact{
+    position: absolute;
+    left: 40px;
+}
+.refresh-contact{
+    position: absolute;
+    left: 10px;
+}
+
