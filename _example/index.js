@@ -1,3 +1,4 @@
+
 if (!localStorage.token) location.assign("/auth");
 
 const button = document.querySelector("button");
@@ -14,14 +15,14 @@ const render = () => {
   contactContainer.innerHTML = "";
 
   for (const contactItem of window.list) {
-    const name = contactItem.name;
+    var name = contactItem.name;
     let div = document.createElement("div");
     div.innerHTML = `
      ${name}
     `;
 
     contactContainer.appendChild(div);
-    // const {userName, name} = contactItem.userName
+    // const {userName, name} = contactItem.userName;
   }
 };
 
@@ -30,7 +31,7 @@ const sync = () => {
     console.table(result.contactList);
 
     window.list = result.contactList;
-    // render();
+    render();
 
     loading = false;
     divLoading.style.display = "none";

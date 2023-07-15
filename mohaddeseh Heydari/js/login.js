@@ -92,10 +92,9 @@ document.getElementById("btn").addEventListener("click", function (event) {
                 if (success) console.log("result from api -> ", response);
                 else console.error("error from api -> ", response);
                 alert(response.message);
-
-                //redirect if you want
-                // if(success)
-                //   window.location.assign('url...')
+  
+                if(success)
+                  window.location.assign("../chat.html");
             }
         );
     } else {
