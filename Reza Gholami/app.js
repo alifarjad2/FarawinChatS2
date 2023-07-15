@@ -63,7 +63,7 @@ function eventListeners() {
 	//ها میتوان توابع رو مختصر نوشت arrow function با استفاده از 
 	document.addEventListener( "DOMContentLoaded", () => {
 		submitForm.disabled = true;// دکمه سابمیت در ابتدا غیر فعال میشود
-		sendMessageBtn.disabled = true// دکمه ارسال پیام در ابتدا غیر فعال هست
+		// sendMessageBtn.disabled = true// دکمه ارسال پیام در ابتدا غیر فعال هست
 		messageInput.disabled = true //اینپوت نوشتن پیام در ابتدا غیر فعال می باشد تا زمانی که کاربر انتخاب نشده
 		spinner.style.display = "flex" //اسپینر در ابتدا تا زمانی که مخاطبین از سرور گرفته شوند فعال می شود
 	} )
@@ -178,6 +178,11 @@ function emptysections() {
 	if ( userSelected.innerHTML == "" ) {
 		userSelected.innerHTML = `
 			<span class="emptyUserSelected" >هنوز مخاطبی انتخاب نشده است</span>
+			`
+	}
+	if ( window.innerWidth >= 300 && window.innerWidth <= 400 ) {
+		userSelected.innerHTML = `
+			<span class="emptyUserSelected" style="font-size:0.7rem;margin-right:10px" >هنوز مخاطبی انتخاب نشده است</span>
 			`
 	}
 }
