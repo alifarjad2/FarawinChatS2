@@ -62,7 +62,7 @@ function refreshList() {
     document.querySelector(".img-profile-select").style.filter = "blur(1.5px)";
     document.querySelector(".img-edit").style.filter = "blur(1.5px)";
     document.querySelector(".img-refresh-text").style.filter = "blur(1.5px)";
-    document.getElementById("name-profile-select").textContent="یک مخاطب انتخاب کنید"
+    document.getElementById("name-profile-select").textContent = "یک مخاطب انتخاب کنید"
 }
 
 
@@ -342,6 +342,35 @@ nameUserInputEditContact.addEventListener("input", function (e) {
     }
 });
 
+
+
+
+/* hamberger menu */
+
+var btnMenu = document.querySelector(".btn-menu");
+var menu = document.querySelector(".chat-right");
+var open = false;
+btnMenu.addEventListener("click", function () {
+    if (open == false) {
+        open = true;
+        btnMenu.classList.add("open");
+        menu.classList.add("chat-right-mobile");
+        document.querySelector(".chat-right-mobile").style.animation = "appear 250ms ease-in 1"
+        menu.style.display ='block';
+    }
+
+    else{
+        open = false; 
+        document.querySelector(".chat-right-mobile").style.animation = "diappear 250ms ease-in 1"
+        //بعد از اینکه انیمشن اجرا شد دکمه لسیت یوزر ها بسته شود
+        setTimeout(
+            function () {
+                menu.style.display ='none';
+                menu.classList.remove("chat-right-mobile");
+                btnMenu.classList.remove("open");
+            }, 250);
+    }   
+})
 
 
 
