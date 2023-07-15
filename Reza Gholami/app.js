@@ -45,6 +45,7 @@ function eventListeners() {
 	contactItems.addEventListener( 'click', userInfo )// اگر در هرجایی از  کانتکت آیتمز کلیک شد تابع فراخوانی میشود
 	messageInput.addEventListener( 'blur',()=>{if( messageInput.Value != '') sendMessageBtn.disabled = false})
 	sendMessageBtn.addEventListener( 'click', sendMessage )
+	sendMessageBtn.addEventListener( 'touchstart', sendMessage )
 	showIcon.addEventListener( 'click', showSidebarMenu )
 	hideIcon.addEventListener( 'click', hideSidebarMenu )
 	addUser.addEventListener( 'click', popUpAudience )// برای آیکون های اد یوزر و ادیت یک تابع در نظر گرفته شده برای جلوگیری از کد نویسی مجدد اما در تابع جدا جدا موارد بررسی میشود
