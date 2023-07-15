@@ -1,9 +1,8 @@
 // بررسی میکنیم که آیا توکن در حافظه محلی وجود دارد یا نه اگر توکن وجود نداشته باشد کاربر به صفحه ورود یا ثبت نام هدایت میشود
 if (!localStorage.token) location.assign("/auth");
 
-function refreshContact() {
-  alert("لیست مخاطبین به روزرسانی شد")
-  let contactContainer = document.querySelector("#contact-container");
+function syncbtn() {
+  let contactContainer = document.querySelector("#contact-Container");
   
     const render = () => {
       if (!window.list) return;
