@@ -21,20 +21,95 @@
   <!-- #region body -->
   <!-- khob tag body badane safhe hamon hast va har chizi ki bkhhim dakhel safhehamon bashe dar inja code miznim -->
   <body>
+    <!-- #region EditContactBox -->
+    <div class="editContact-container" style="display: none;">
+      <div class="editContact-form">
+        <!-- #region X-SquaredSVGIcon -->
+        <div class="x-squared">X</div>
+        <!-- #endregion -->
+        <!-- #region EditContactForm -->
+        <label for="textMobile"> شماره موبایل مخاطب: </label>
+        <!-- tag input ham baraye gereftn data az user hast id on ro az ravesh camel estefade kardm avl type data ro nevesht va bad esm data -->
+        <input
+          class="data"
+          type="text"
+          id="textMobile"
+          placeholder="0911111111"
+          maxlength="11";
+          disabled
+        />
+        <!-- baraye ghati nashodn field ha va label ha va error ha yek khat fasele gozashtm barya har input -->
+        <br />
+        <label for="textFullname"> نام و نام خانوادگی مخاطب :</label>
+        <input
+          class="data"
+          type="text"
+          id="textFullname"
+          placeholder="سعید سعادتی فر"
+        />
+        <span id="errorFullname" style="color: red; visibility: hidden"
+          >پر کردن این فیلد اجباری است</span
+        >
+        <br />
+        <!-- az in button baraye taaid va ersal etelaat estefade kardm va halat on ro disble gozashtm ta zamani ke vorodi ha okay bashe -->
+        <button class="done" disabled>ویرایش مخاطب</button>
+        <!-- #endregion -->
+      </div>
+    </div>
+    <!-- #endregion -->
+    <!-- #region AddContactBox -->
+    <div class="addContact-container">
+      <div class="addContact-form">
+        <!-- #region X-SquaredSVGIcon -->
+        <div class="x-squared">X</div>
+        <!-- #endregion -->
+        <!-- #region AddContactForm -->
+        <label for="textMobile"> شماره موبایل مخاطب: </label>
+        <!-- tag input ham baraye gereftn data az user hast id on ro az ravesh camel estefade kardm avl type data ro nevesht va bad esm data -->
+        <input
+          class="data"
+          type="text"
+          id="textMobile"
+          placeholder="0911111111"
+          maxlength="11";
+        />
+        <!-- in tag ro baraye namayesh error gozashtm va be in dalil az tag span estefade kardm ke be sorat inline bashe -->
+        <span id="errorMobile" style="color: red; visibility: hidden"
+          >شماره موبایل مخاطب اشتباه وارد شده</span
+        >
+        <!-- baraye ghati nashodn field ha va label ha va error ha yek khat fasele gozashtm barya har input -->
+        <br />
+        <label for="textFullname"> نام و نام خانوادگی مخاطب :</label>
+        <input
+          class="data"
+          type="text"
+          id="textFullname"
+          placeholder="سعید سعادتی فر"
+        />
+        <span id="errorFullname" style="color: red; visibility: hidden"
+          >پر کردن این فیلد اجباری است</span
+        >
+        <br />
+        <!-- az in button baraye taaid va ersal etelaat estefade kardm va halat on ro disble gozashtm ta zamani ke vorodi ha okay bashe -->
+        <button class="done" disabled>افزودن مخاطب</button>
+        <!-- #endregion -->
+      </div>
+    </div>
+    <!-- #endregion -->
     <!-- #region Layout Page -->
     <!-- #region sideBar -->
     <!-- kol sidebar ro be 2 ghesmat taghsim kard yeki samt rasst k fght sidebaricon hst
        va samt chap k shamel ma baghi etelaat hast -->
-    <div class="contacts-container">
+    <div class="contacts-container" icon="0">
       <!-- #region Only sidebar Icon -->
-      <div class="sidebar-icon">
+      <div class="sidebar-icon" icon="0">
         <!-- #region Sidebar Icon -->
         <?xml version="1.0" ?><!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'>
         <svg
-          class="rotate"
+          class="rotate90"
           height="32px"
           id="Layer_1"
-          style="enable-background: new 0 0 32 32"
+          style="enable-background: new 0 0 32 32; transition: all 400ms"
           version="1.1"
           viewBox="0 0 32 32"
           width="32px"
@@ -56,7 +131,7 @@
       <div class="contacts">
         <!-- #region Title and addContactIcon & refreshIcon -->
         <div class="titlebar">
-          <p>پیام‌رسان فراوین</p>
+          <p>پیام‌ رسان فراوین</p>
           <!-- #region addContact Icon -->
           <svg
             id="addContact-icon"
@@ -66,6 +141,7 @@
             fill="currentColor"
             class="bi bi-plus"
             viewBox="0 0 16 16"
+            style="transition: all 400ms"
           >
             <path
               d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
@@ -89,6 +165,7 @@
                 stroke-linecap: square;
                 stroke-miterlimit: 10;
                 stroke-width: 32px;
+                transition: all 400ms;
               "
             />
             <polyline
@@ -100,31 +177,117 @@
                 stroke-linecap: square;
                 stroke-miterlimit: 10;
                 stroke-width: 32px;
+                transition: all 400ms;
               "
             />
           </svg>
           <!-- #endregion -->
         </div>
         <!-- #endregion -->
+        <!-- #region Loading -->
+        <div class="lds-dual-ring"></div>
+        <!-- #endregion -->
         <!-- #region ContactList -->
-        <div class="contacts-list">
-          
-        </div>
+        <div name="parrent" class="contacts-list"></div>
         <!-- #endregion -->
       </div>
       <!-- #endregion -->
     </div>
     <!-- #endregion -->
     <!-- #region ChatLayout -->
-    <div class="flex-container">
-      <div class="chating-contact-name">نام مخاطب در حال چت</div>
-      <div class="chat-page">صفحه چت</div>
-      <div class="type-container">قسمت تایپ</div>
+    <div class="flex-container chatMarginNegative displayNone">
+      <!-- #region ChatHeader -->
+      <div class="chating-contact-name">
+        <!-- #region ProfileItems -->
+        <div class="profile-Header">
+          <div class="MobileHeader"></div>
+          <div class="image-profile-Header"></div>
+          <div class="name-profile-Header"></div>
+          <!-- #region EditSVGIcon -->
+          <svg
+            class="bi bi-pencil-square"
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="63"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"
+            />
+          </svg>
+          <!-- #endregion -->
+          <!-- #region RefreshSVGIcon -->
+          <svg
+            class="refresh-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            width="35"
+            height="58"
+            viewBox="0 0 512 512"
+          >
+            <path
+              class="refresh-line"
+              d="M320,146s24.36-12-64-12A160,160,0,1,0,416,294"
+              style="
+                fill: none;
+                stroke: #000;
+                stroke-linecap: square;
+                stroke-miterlimit: 10;
+                stroke-width: 32px;
+                transition: all 400ms;
+              "
+            />
+            <polyline
+              class="refresh-arrow"
+              points="256 58 336 138 256 218"
+              style="
+                fill: none;
+                stroke: #000;
+                stroke-linecap: square;
+                stroke-miterlimit: 10;
+                stroke-width: 32px;
+                transition: all 400ms;
+              "
+            />
+          </svg>
+          <!-- #endregion -->
+        </div>
+        <!-- #endregion -->
+      </div>
+      <!-- #endregion -->
+      <!-- #region ChatPage -->
+      <div class="chat-page"></div>
+      <!-- #endregion -->
+      <!-- #region TypingBox -->
+      <div class="type-container">
+        <input type="text" class="typing-input" placeholder="پیام..." />
+        <!-- #region SendSVGIcon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="50"
+          height="60"
+          viewBox="0 0 512 512"
+          class="send-icon"
+        >
+          <path
+            d="M470.3,271.15,43.16,447.31a7.83,7.83,0,0,1-11.16-7V327a8,8,0,0,1,6.51-7.86l247.62-47c17.36-3.29,17.36-28.15,0-31.44l-247.63-47a8,8,0,0,1-6.5-7.85V72.59c0-5.74,5.88-10.26,11.16-8L470.3,241.76A16,16,0,0,1,470.3,271.15Z"
+            style="
+              fill: currentColor;
+              stroke: #000;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+              stroke-width: 32px;
+            "
+          />
+        </svg>
+        <!-- #endregion -->
+      </div>
+      <!-- #endregion -->
     </div>
     <!-- #endregion -->
     <!-- #endregion -->
     <!-- #region Scripts -->
-    <script src="../../Scripts/Chat/Chat.js"></script>
+    <script defer src="../../Scripts/Chat/Chat.js"></script>
     <script src="../../Scripts/API/farawin.js"></script>
     <!-- #endregion -->
   </body>
