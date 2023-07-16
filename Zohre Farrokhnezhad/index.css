@@ -1,0 +1,62 @@
+.container{
+  display: flex;
+flex-direction: row;
+justify-content: space-between;
+margin: 0 142px 0 148px;
+
+}
+.avator{
+  border: 2px solid green;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.chat-container {
+  width: 900px;
+  height: 550px;
+  border: 1px solid green;
+  padding: 10px;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+.chat-contact{
+  width: 300px;
+   border: 1px solid green;
+  padding: 10px;
+  overflow-y: scroll;
+  border-radius: 10px;
+}
+.message {
+  margin-bottom: 10px;
+}
+.message .sender {
+  font-weight: bold;
+}
+
+.input-container {
+  margin-top: 10px;
+}
+.input-container input {
+  width: 75%;
+  padding: 5px;
+ margin-left: 140px;
+ border :2px solid green;
+ border-radius: 10px;
+}
+
+.loader {
+  border: 16px solid #f3f3f3; 
+  border-top: 16px solid #05720a; 
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  bottom: 50%;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
